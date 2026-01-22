@@ -14,7 +14,7 @@ import { ContentWithLoadMore } from "../components/ContentWithLoadMore";
 function MoreInfoTrigger() {
   return (
     <div className="basis-0 content-stretch flex gap-[4px] grow items-start min-h-px min-w-px relative self-stretch shrink-0" data-name="More info trigger">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">Best matches</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">Best matches</p>
     </div>
   );
 }
@@ -62,7 +62,7 @@ function Frame1() {
 function MoreInfoTrigger1() {
   return (
     <div className="basis-0 content-stretch flex gap-[4px] grow items-start min-h-px min-w-px relative self-stretch shrink-0" data-name="More info trigger">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">4 of 56 results</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">4 of 56 results</p>
     </div>
   );
 }
@@ -244,7 +244,7 @@ function ImgOptions() {
 function Heading() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Charming guest house with a yard</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Charming guest house with a yard</p>
     </div>
   );
 }
@@ -260,7 +260,7 @@ function Frame21() {
 function Text() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -296,7 +296,7 @@ function Frame12() {
 function Text1() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">5 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">5 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -320,7 +320,7 @@ function Row() {
 function BadgeText() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
     </div>
   );
 }
@@ -368,7 +368,7 @@ function ScoreContainer() {
 function Text2() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
     </div>
   );
 }
@@ -415,7 +415,7 @@ function HeadingOptions() {
 function Text3() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
     </div>
   );
 }
@@ -455,7 +455,7 @@ function DatedPriceSummary() {
 function Text4() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
     </div>
   );
 }
@@ -543,7 +543,7 @@ function SearchResultsCard() {
 function BadgeText1() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Picked for you</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Picked for you</p>
     </div>
   );
 }
@@ -709,7 +709,7 @@ function ImgOptions1() {
 function Heading1() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">{`Condo close to all amenities `}</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">{`Condo close to all amenities `}</p>
     </div>
   );
 }
@@ -725,7 +725,7 @@ function Frame22() {
 function Text5() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -761,7 +761,7 @@ function Frame14() {
 function Text6() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">7 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">7 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -785,7 +785,7 @@ function Row1() {
 function BadgeText2() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
     </div>
   );
 }
@@ -833,7 +833,7 @@ function ScoreContainer1() {
 function Text7() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
     </div>
   );
 }
@@ -880,7 +880,7 @@ function HeadingOptions1() {
 function BadgeText3() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="_ / Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
     </div>
   );
 }
@@ -912,7 +912,7 @@ function BadgeSmall() {
 function LinkNeutralColorTeamTier() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="🧪 Link - Neutral color (Team tier)">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
     </div>
   );
 }
@@ -943,7 +943,7 @@ function ReferencePrice() {
 function Text8() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
     </div>
   );
 }
@@ -984,7 +984,7 @@ function DatedPriceSummary1() {
 function Text9() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
     </div>
   );
 }
@@ -1195,7 +1195,7 @@ function OverlayDots2() {
 function BadgeText4() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Love by guests</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Love by guests</p>
     </div>
   );
 }
@@ -1248,7 +1248,7 @@ function ImgOptions2() {
 function Heading2() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Centre located house with artisanal decor</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Centre located house with artisanal decor</p>
     </div>
   );
 }
@@ -1264,7 +1264,7 @@ function Frame24() {
 function Text10() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -1300,7 +1300,7 @@ function Frame15() {
 function Text11() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min drive to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min drive to Historic Santa fe</p>
     </div>
   );
 }
@@ -1324,7 +1324,7 @@ function Row2() {
 function BadgeText5() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
     </div>
   );
 }
@@ -1372,7 +1372,7 @@ function ScoreContainer2() {
 function Text12() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
     </div>
   );
 }
@@ -1419,7 +1419,7 @@ function HeadingOptions2() {
 function BadgeText6() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="_ / Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
     </div>
   );
 }
@@ -1451,7 +1451,7 @@ function BadgeSmall1() {
 function LinkNeutralColorTeamTier1() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="🧪 Link - Neutral color (Team tier)">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
     </div>
   );
 }
@@ -1482,7 +1482,7 @@ function ReferencePrice1() {
 function Text13() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
     </div>
   );
 }
@@ -1523,7 +1523,7 @@ function DatedPriceSummary2() {
 function Text14() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
     </div>
   );
 }
@@ -1737,7 +1737,7 @@ function ImgOptions3() {
 function Heading3() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">House with adobe charm</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">House with adobe charm</p>
     </div>
   );
 }
@@ -1753,7 +1753,7 @@ function Frame26() {
 function Text15() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -1789,7 +1789,7 @@ function Frame13() {
 function Text16() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -1813,7 +1813,7 @@ function Row3() {
 function BadgeText7() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
     </div>
   );
 }
@@ -1861,7 +1861,7 @@ function ScoreContainer3() {
 function Text17() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
     </div>
   );
 }
@@ -1908,7 +1908,7 @@ function HeadingOptions3() {
 function Text18() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
     </div>
   );
 }
@@ -1948,7 +1948,7 @@ function DatedPriceSummary3() {
 function Text19() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
     </div>
   );
 }
@@ -2045,7 +2045,7 @@ function Frame28() {
 function MoreInfoTrigger2() {
   return (
     <div className="basis-0 content-stretch flex gap-[4px] grow items-start min-h-px min-w-px relative self-stretch shrink-0" data-name="More info trigger">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">Load more results</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">Load more results</p>
     </div>
   );
 }
@@ -2135,7 +2135,7 @@ function Pill1() {
           <ButtonPrimaryIconOnly />
         </div>
       </div>
-      <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+      <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
         <p className="leading-[1.25] whitespace-pre">More like this</p>
       </div>
     </div>
@@ -2190,7 +2190,7 @@ function Pill2() {
           <ButtonPrimaryIconOnly1 />
         </div>
       </div>
-      <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+      <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
         <p className="leading-[1.25] whitespace-pre">Try different</p>
       </div>
     </div>
@@ -2242,7 +2242,7 @@ function Pill3() {
           <ButtonPrimaryIconOnly2 />
         </div>
       </div>
-      <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+      <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
         <p className="leading-[1.25] whitespace-pre">Not quite right</p>
       </div>
     </div>
@@ -2396,7 +2396,7 @@ function ImgOptions4() {
 function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Charming guest house with a yard</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Charming guest house with a yard</p>
     </div>
   );
 }
@@ -2412,7 +2412,7 @@ function Frame32() {
 function Text20() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -2448,7 +2448,7 @@ function Frame16() {
 function Text21() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">5 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">5 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -2472,7 +2472,7 @@ function Row4() {
 function BadgeText8() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
     </div>
   );
 }
@@ -2520,7 +2520,7 @@ function ScoreContainer4() {
 function Text22() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
     </div>
   );
 }
@@ -2567,7 +2567,7 @@ function HeadingOptions4() {
 function Text23() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
     </div>
   );
 }
@@ -2607,7 +2607,7 @@ function DatedPriceSummary4() {
 function Text24() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
     </div>
   );
 }
@@ -2695,7 +2695,7 @@ function SearchResultsCard4() {
 function BadgeText9() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Picked for you</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Picked for you</p>
     </div>
   );
 }
@@ -2861,7 +2861,7 @@ function ImgOptions5() {
 function Heading5() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">{`Condo close to all amenities `}</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">{`Condo close to all amenities `}</p>
     </div>
   );
 }
@@ -2877,7 +2877,7 @@ function Frame34() {
 function Text25() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -2913,7 +2913,7 @@ function Frame17() {
 function Text26() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">7 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">7 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -2937,7 +2937,7 @@ function Row5() {
 function BadgeText10() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
     </div>
   );
 }
@@ -2985,7 +2985,7 @@ function ScoreContainer5() {
 function Text27() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
     </div>
   );
 }
@@ -3032,7 +3032,7 @@ function HeadingOptions5() {
 function BadgeText11() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="_ / Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
     </div>
   );
 }
@@ -3064,7 +3064,7 @@ function BadgeSmall2() {
 function LinkNeutralColorTeamTier2() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="🧪 Link - Neutral color (Team tier)">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
     </div>
   );
 }
@@ -3095,7 +3095,7 @@ function ReferencePrice2() {
 function Text28() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
     </div>
   );
 }
@@ -3136,7 +3136,7 @@ function DatedPriceSummary5() {
 function Text29() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
     </div>
   );
 }
@@ -3347,7 +3347,7 @@ function OverlayDots6() {
 function BadgeText12() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Love by guests</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">Love by guests</p>
     </div>
   );
 }
@@ -3400,7 +3400,7 @@ function ImgOptions6() {
 function Heading6() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Centre located house with artisanal decor</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">Centre located house with artisanal decor</p>
     </div>
   );
 }
@@ -3416,7 +3416,7 @@ function Frame36() {
 function Text30() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -3452,7 +3452,7 @@ function Frame18() {
 function Text31() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min drive to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min drive to Historic Santa fe</p>
     </div>
   );
 }
@@ -3476,7 +3476,7 @@ function Row6() {
 function BadgeText13() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.8</p>
     </div>
   );
 }
@@ -3524,7 +3524,7 @@ function ScoreContainer6() {
 function Text32() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(43)</p>
     </div>
   );
 }
@@ -3571,7 +3571,7 @@ function HeadingOptions6() {
 function BadgeText14() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="_ / Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#006ed6] text-[12px] text-nowrap whitespace-pre">$117 off</p>
     </div>
   );
 }
@@ -3603,7 +3603,7 @@ function BadgeSmall3() {
 function LinkNeutralColorTeamTier3() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="🧪 Link - Neutral color (Team tier)">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-right whitespace-pre">$342</p>
     </div>
   );
 }
@@ -3634,7 +3634,7 @@ function ReferencePrice3() {
 function Text33() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$313</p>
     </div>
   );
 }
@@ -3675,7 +3675,7 @@ function DatedPriceSummary6() {
 function Text34() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$1,251 for 4 nights</p>
     </div>
   );
 }
@@ -3889,7 +3889,7 @@ function ImgOptions7() {
 function Heading7() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading">
-      <p className="-webkit-box font-['Centra_No2:Medium',sans-serif] leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">House with adobe charm</p>
+      <p className="-webkit-box font-['CentraNo2',sans-serif] font-medium leading-[1.25] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[16px] w-full">House with adobe charm</p>
     </div>
   );
 }
@@ -3905,7 +3905,7 @@ function Frame38() {
 function Text35() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">House · 2 bedrooms · 4 beds</p>
     </div>
   );
 }
@@ -3941,7 +3941,7 @@ function Frame19() {
 function Text36() {
   return (
     <div className="content-stretch flex items-start relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min walk to Historic Santa fe</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px]">10 min walk to Historic Santa fe</p>
     </div>
   );
 }
@@ -3965,7 +3965,7 @@ function Row7() {
 function BadgeText15() {
   return (
     <div className="content-stretch flex gap-[10px] items-start relative shrink-0" data-name="Badge text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#191e3b] text-[12px] text-nowrap whitespace-pre">9.6</p>
     </div>
   );
 }
@@ -4013,7 +4013,7 @@ function ScoreContainer7() {
 function Text37() {
   return (
     <div className="content-stretch flex items-start relative self-stretch shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
+      <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">(103)</p>
     </div>
   );
 }
@@ -4060,7 +4060,7 @@ function HeadingOptions7() {
 function Text38() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Text">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-nowrap whitespace-pre">$217</p>
     </div>
   );
 }
@@ -4100,7 +4100,7 @@ function DatedPriceSummary7() {
 function Text39() {
   return (
     <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-name="Text">
-      <p className="basis-0 font-['Centra_No2:Regular',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
+      <p className="basis-0 font-['CentraNo2',sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#676a7d] text-[14px] text-right">$869 for 4 nights</p>
     </div>
   );
 }
@@ -4356,7 +4356,7 @@ function Frame2() {
 function Label() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$359</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$359</p>
     </div>
   );
 }
@@ -4397,7 +4397,7 @@ function MapPinProductText() {
 function Label1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$519</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$519</p>
     </div>
   );
 }
@@ -4438,7 +4438,7 @@ function MapPinProductText1() {
 function Label2() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$278</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$278</p>
     </div>
   );
 }
@@ -4479,7 +4479,7 @@ function MapPinProductText2() {
 function Label3() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$283</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$283</p>
     </div>
   );
 }
@@ -4520,7 +4520,7 @@ function MapPinProductText3() {
 function Label4() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
     </div>
   );
 }
@@ -4561,7 +4561,7 @@ function MapPinProductText4() {
 function Label5() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$344</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$344</p>
     </div>
   );
 }
@@ -4602,7 +4602,7 @@ function MapPinProductText5() {
 function Label6() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$283</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$283</p>
     </div>
   );
 }
@@ -4643,7 +4643,7 @@ function MapPinProductText6() {
 function Label7() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$473</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$473</p>
     </div>
   );
 }
@@ -4684,7 +4684,7 @@ function MapPinProductText7() {
 function Label8() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$644</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$644</p>
     </div>
   );
 }
@@ -4725,7 +4725,7 @@ function MapPinProductText8() {
 function Label9() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
     </div>
   );
 }
@@ -4783,7 +4783,7 @@ function MapPins() {
 function Label10() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$185</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$185</p>
     </div>
   );
 }
@@ -4808,7 +4808,7 @@ function MapPinProductText10() {
 function Label11() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$185</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$185</p>
     </div>
   );
 }
@@ -4849,7 +4849,7 @@ function MapPinProductText11() {
 function Label12() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$278</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$278</p>
     </div>
   );
 }
@@ -4890,7 +4890,7 @@ function MapPinProductText12() {
 function Label13() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$283</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$283</p>
     </div>
   );
 }
@@ -4915,7 +4915,7 @@ function MapPinProductText13() {
 function Label14() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$344</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$344</p>
     </div>
   );
 }
@@ -4940,7 +4940,7 @@ function MapPinProductText14() {
 function Label15() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$344</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$344</p>
     </div>
   );
 }
@@ -4981,7 +4981,7 @@ function MapPinProductText15() {
 function Label16() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white whitespace-pre">$371</p>
     </div>
   );
 }
@@ -5022,7 +5022,7 @@ function MapPinProductText16() {
 function Label17() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$255</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$255</p>
     </div>
   );
 }
@@ -5047,7 +5047,7 @@ function MapPinProductText17() {
 function Label18() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$321</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$321</p>
     </div>
   );
 }
@@ -5072,7 +5072,7 @@ function MapPinProductText18() {
 function Label19() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$566</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$566</p>
     </div>
   );
 }
@@ -5097,7 +5097,7 @@ function MapPinProductText19() {
 function Label20() {
   return (
     <div className="content-stretch flex flex-col gap-[3px] items-center justify-center relative shrink-0" data-name="Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$211</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[5.4px] not-italic opacity-0 relative shrink-0 text-[4.2px] text-center text-nowrap text-white whitespace-pre">$211</p>
     </div>
   );
 }
@@ -5207,7 +5207,7 @@ function Search() {
 function ButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
     </div>
   );
 }
@@ -5241,7 +5241,7 @@ function Frame7() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[26px] top-[20px]">
       <Icon />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">Santa Fe traditional homes</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">Santa Fe traditional homes</p>
     </div>
   );
 }
@@ -5267,7 +5267,7 @@ function Frame8() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[387px] top-[20px]">
       <Icon1 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">23-24 Jun</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">23-24 Jun</p>
     </div>
   );
 }
@@ -5293,7 +5293,7 @@ function Frame9() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[549px] top-[20px]">
       <Icon2 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">3 people</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">3 people</p>
     </div>
   );
 }
@@ -5386,7 +5386,7 @@ function ButtonContainer1() {
 function Frame10() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[24px] top-[20px]">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.75)] text-center text-nowrap whitespace-pre">“Cozy feeling inside”</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.75)] text-center text-nowrap whitespace-pre">“Cozy feeling inside”</p>
     </div>
   );
 }
@@ -5407,7 +5407,7 @@ function Pill() {
   return (
     <div className="bg-white relative rounded-[32px] shrink-0" data-name="pill1">
       <div className="box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[inherit]">
-        <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+        <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
           <p className="leading-[1.25] whitespace-pre">King beds in all bedrooms</p>
         </div>
       </div>
@@ -5420,7 +5420,7 @@ function Pill4() {
   return (
     <div className="bg-white relative rounded-[32px] shrink-0" data-name="pill2">
       <div className="box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[inherit]">
-        <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+        <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
           <p className="leading-[1.25] whitespace-pre">Slightly cheaper</p>
         </div>
       </div>
@@ -5433,7 +5433,7 @@ function Pill5() {
   return (
     <div className="bg-white relative rounded-[32px] shrink-0" data-name="pill3">
       <div className="box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[inherit]">
-        <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+        <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
           <p className="leading-[1.25] whitespace-pre">Easy walk to trails</p>
         </div>
       </div>
@@ -5446,7 +5446,7 @@ function Pill6() {
   return (
     <div className="bg-white relative rounded-[32px] shrink-0" data-name="pill3">
       <div className="box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[inherit]">
-        <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+        <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
           <p className="leading-[1.25] whitespace-pre">Extra cozy vibes</p>
         </div>
       </div>
@@ -5511,7 +5511,7 @@ function GlobalNavigationButtonIcon() {
 function GlobalNavigationButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">English</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">English</p>
     </div>
   );
 }
@@ -5536,7 +5536,7 @@ function GlobalNavigationButtonTertiaryStandard() {
 function GlobalNavigationButtonLabel1() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">List your property</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">List your property</p>
     </div>
   );
 }
@@ -5560,7 +5560,7 @@ function GlobalNavigationButtonTertiaryStandard1() {
 function GlobalNavigationButtonLabel2() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Support</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Support</p>
     </div>
   );
 }
@@ -5584,7 +5584,7 @@ function GlobalNavigationButtonTertiaryStandard2() {
 function GlobalNavigationButtonLabel3() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Trips</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Trips</p>
     </div>
   );
 }
@@ -5608,7 +5608,7 @@ function GlobalNavigationButtonTertiaryStandard3() {
 function GlobalNavigationButtonLabel4() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Sign in</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center text-nowrap whitespace-pre">Sign in</p>
     </div>
   );
 }

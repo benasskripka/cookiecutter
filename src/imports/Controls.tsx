@@ -43,7 +43,7 @@ function Frame1() {
     <div className="content-stretch flex gap-[12px] items-center px-[24px] py-[12px] relative rounded-[24px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#dfe0e4] border-solid inset-0 pointer-events-none rounded-[24px]" />
       <Icon />
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">Santa Fe</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">Santa Fe</p>
     </div>
   );
 }
@@ -70,7 +70,7 @@ function Frame2() {
     <div className="content-stretch flex gap-[12px] items-center px-[24px] py-[12px] relative rounded-[24px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#dfe0e4] border-solid inset-0 pointer-events-none rounded-[24px]" />
       <Icon1 />
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">23-24 Jun</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">23-24 Jun</p>
     </div>
   );
 }
@@ -97,7 +97,7 @@ function Frame3() {
     <div className="content-stretch flex gap-[12px] items-center px-[24px] py-[12px] relative rounded-[24px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#dfe0e4] border-solid inset-0 pointer-events-none rounded-[24px]" />
       <Icon2 />
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">3 people</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center">3 people</p>
     </div>
   );
 }

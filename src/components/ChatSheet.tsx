@@ -153,7 +153,7 @@ function Pill({ icon, text }: { icon: React.ReactNode, text: string }) {
       <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
         {icon}
       </div>
-      <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="leading-[1.25]">{text}</p>
       </div>
     </div>
@@ -168,7 +168,7 @@ function HistoryItem({ text }: { text: string }) {
                 <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
                      <HistoryPinIcon />
                 </div>
-                <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+                <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
                     <p className="leading-[1.25]">{text}</p>
                 </div>
             </div>
@@ -233,7 +233,7 @@ export function ChatSheet({
   };
 
   return (
-    <div className="relative size-full bg-white h-full border-l border-gray-200 shadow-xl flex flex-col font-['Centra_No2:Medium',sans-serif]">
+    <div className="relative size-full bg-white h-full border-l border-gray-200 shadow-xl flex flex-col font-['CentraNo2',sans-serif] font-medium">
       {/* Header */}
       <div className="p-[24px] flex justify-between items-start shrink-0 z-10 bg-white">
         <IconButton onClick={() => setShowHistory(!showHistory)} className={showHistory ? "bg-gray-100" : ""}>
@@ -297,7 +297,7 @@ export function ChatSheet({
                     <div className="absolute inset-0 bg-white rounded-[32px] border border-[rgba(0,0,0,0.15)] shadow-[0px_5px_15px_0px_rgba(0,0,0,0.1)] overflow-hidden transition-shadow focus-within:shadow-md">
                         <div className="relative size-full p-[24px]">
                             <textarea 
-                                className="w-full h-full resize-none outline-none font-['Centra_No2:Medium',sans-serif] text-[14px] leading-[18px] text-black border-none p-0 placeholder-gray-400"
+                                className="w-full h-full resize-none outline-none font-['CentraNo2',sans-serif] font-medium text-[14px] leading-[18px] text-black border-none p-0 placeholder-gray-400"
                                 placeholder="Type what you would like to see or change"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}

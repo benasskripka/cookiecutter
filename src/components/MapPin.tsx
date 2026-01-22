@@ -3,7 +3,7 @@ import React from "react";
 function Label({ text }: { text: string }) {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0" data-name="Label">
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-white">
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-center text-white">
         {text}
       </p>
     </div>

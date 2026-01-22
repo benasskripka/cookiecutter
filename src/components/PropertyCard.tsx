@@ -42,7 +42,7 @@ export function PropertyCard({ property, index, className }: { property: Propert
               <div className="absolute top-[12px] left-[12px]">
                 <div className="flex items-start justify-start relative shrink-0">
                   <div className="bg-[#191e3b] content-stretch flex items-start overflow-clip px-[12px] py-[6px] relative rounded-[8px] shrink-0">
-                    <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white">
+                    <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-white">
                       {property.badge}
                     </p>
                   </div>
@@ -82,28 +82,28 @@ export function PropertyCard({ property, index, className }: { property: Propert
             <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
               <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full">
                 <div className="flex items-start justify-between w-full gap-[8px]">
-                  <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+                  <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
                     {property.title}
                   </p>
                   <div className="content-stretch flex gap-[4px] items-center relative shrink-0">
-                    <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
+                    <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
                       ({property.reviews})
                     </p>
                     <div className="bg-[#00754a] box-border content-stretch flex items-center overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0">
-                      <p className="font-['Centra_No2:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">
+                      <p className="font-['CentraNo2',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[12px] text-nowrap text-white whitespace-pre">
                         {property.rating}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-[4px] items-start relative shrink-0 w-full">
-                  <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
+                  <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
                     {property.type} · {property.bedrooms} bedrooms · {property.beds} beds
                   </p>
                 </div>
 
                 <div className="content-stretch flex gap-[4px] items-start relative shrink-0 w-full">
-                  <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] not-italic relative text-[rgb(25,30,59)] text-[14px] whitespace-normal">
+                  <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative text-[rgb(25,30,59)] text-[14px] whitespace-normal">
                     {property.highlight?.split(';').map(t => t.trim()).join(' · ')}
                   </p>
                 </div>
@@ -114,21 +114,21 @@ export function PropertyCard({ property, index, className }: { property: Propert
                 <div className="content-stretch flex flex-col gap-[2px] items-start justify-start relative shrink-0">
                   {property.discount && (
                     <div className="bg-[#e5f5ed] box-border content-stretch flex items-center overflow-clip px-[8px] py-[2px] relative rounded-[4px] shrink-0">
-                      <p className="font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#00754a] text-[12px] text-nowrap whitespace-pre">
+                      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#00754a] text-[12px] text-nowrap whitespace-pre">
                         {property.discount}
                       </p>
                     </div>
                   )}
                   <div className="content-stretch flex gap-[4px] items-baseline relative shrink-0">
                     {property.originalPrice && (
-                      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] line-through not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
+                      <p className="font-['CentraNo2',sans-serif] leading-[18px] line-through not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
                         {property.originalPrice}
                       </p>
                     )}
-                    <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">
+                    <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">
                       ${property.price}
                     </p>
-                    <p className="font-['Centra_No2:Regular',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-left whitespace-pre">
+                    <p className="font-['CentraNo2',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-left whitespace-pre">
                       · {property.totalPrice} total
                     </p>
                   </div>

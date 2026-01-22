@@ -23,7 +23,7 @@ function LeftColumn() {
 function GlobalNavigationButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center">Support</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center">Support</p>
     </div>
   );
 }
@@ -47,7 +47,7 @@ function GlobalNavigationButtonTertiaryStandard() {
 function GlobalNavigationButtonLabel1() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ Global navigation / Button / Label">
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center">Sign in</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[16px] text-center">Sign in</p>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 @custom-variant dark (&:is(.dark *));
 
-/* Centra No2 (local files in /public/fonts) */
+/* Centra No2 - unified font-family with weight variants */
 @font-face {
-  font-family: "Centra_No2:Light";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Light";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-LightItalic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Regular";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-Reg.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
@@ -26,24 +26,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Regular";
-  src: url("/fonts/CentraNo2-RegItalic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Some Figma exports reference "Book"; map it to Regular (closest available in provided files). */
-@font-face {
-  font-family: "Centra_No2:Book";
-  src: url("/fonts/CentraNo2-Reg.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Centra_No2:Book";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-RegItalic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
@@ -51,7 +34,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Medium";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
@@ -59,7 +42,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Medium";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-MediumItalic.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
@@ -67,7 +50,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Bold";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
@@ -75,7 +58,7 @@
 }
 
 @font-face {
-  font-family: "Centra_No2:Bold";
+  font-family: "CentraNo2";
   src: url("/fonts/CentraNo2-BoldItalic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
@@ -208,6 +191,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "CentraNo2", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

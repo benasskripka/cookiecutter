@@ -61,7 +61,7 @@ export function SearchInput({
         <div className="relative w-full h-[18px] flex items-center">
           {/* Ghost element for highlighting text */}
           <div 
-            className={`absolute inset-0 flex items-center pointer-events-none font-['Centra_No2:Medium',sans-serif] h-[18px] leading-[18px] not-italic text-[14px] ${inputWidth} whitespace-pre overflow-hidden`}
+            className={`absolute inset-0 flex items-center pointer-events-none font-['CentraNo2',sans-serif] font-medium h-[18px] leading-[18px] not-italic text-[14px] ${inputWidth} whitespace-pre overflow-hidden`}
             aria-hidden="true"
           >
             {(() => {
@@ -91,7 +91,7 @@ export function SearchInput({
             value={value || ''}
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
-            className={`font-['Centra_No2:Medium',sans-serif] h-[18px] leading-[18px] not-italic text-[14px] text-transparent caret-black bg-transparent border-none outline-none ${inputWidth} relative z-10`}
+            className={`font-['CentraNo2',sans-serif] font-medium h-[18px] leading-[18px] not-italic text-[14px] text-transparent caret-black bg-transparent border-none outline-none ${inputWidth} relative z-10`}
             autoFocus
             onClick={(e) => e.stopPropagation()}
           />
@@ -99,11 +99,11 @@ export function SearchInput({
       ) : rotatingValues && !isActive ? (
         <RotatingText values={rotatingValues} currentIndex={rotatingIndex} />
       ) : value ? (
-        <div className={`font-['Centra_No2:Medium',sans-serif] h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] ${textColor} text-center text-nowrap whitespace-pre`}>
+        <div className={`font-['CentraNo2',sans-serif] font-medium h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] ${textColor} text-center text-nowrap whitespace-pre`}>
           <p>{isUserSelection ? value : `"${value}"`}</p>
         </div>
       ) : (
-        <p className={`font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] ${textColor} text-center text-nowrap whitespace-pre`}>
+        <p className={`font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] ${textColor} text-center text-nowrap whitespace-pre`}>
           {placeholder}
         </p>
       )}

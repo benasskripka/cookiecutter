@@ -3,7 +3,7 @@ import svgPaths from "./svg-x8ycsi1j6p";
 function Pill() {
   return (
     <div className="bg-[#f2f8fd] content-stretch flex items-center overflow-clip px-[24px] py-[16px] relative rounded-[32px] shrink-0" data-name="pill2">
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Not this time</p>
       </div>
     </div>
@@ -55,7 +55,7 @@ function Pill1() {
           <ButtonPrimaryIconOnly />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium','Noto_Sans:Medium',sans-serif] justify-center leading-[0] relative shrink-0 text-[#191e3b] text-[14px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 500" }}>
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#191e3b] text-[14px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 500" }}>
         <p className="css-ew64yg leading-[1.25]">Kauaʻi (+3)</p>
       </div>
     </div>
@@ -107,7 +107,7 @@ function Pill2() {
           <ButtonPrimaryIconOnly1 />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium','Noto_Sans:Medium',sans-serif] justify-center leading-[0] relative shrink-0 text-[#191e3b] text-[14px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 500" }}>
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#191e3b] text-[14px]" style={{ fontVariationSettings: "'CTGR' 0, 'wdth' 100, 'wght' 500" }}>
         <p className="css-ew64yg leading-[1.25]">Oʻahu (+15)</p>
       </div>
     </div>
@@ -127,7 +127,7 @@ function Frame2() {
 function MoreInfoTrigger() {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[4px] items-start min-h-px min-w-px relative self-stretch" data-name="More info trigger">
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px]">Suggestion</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px]">Suggestion</p>
     </div>
   );
 }
@@ -176,7 +176,7 @@ export default function Frame3() {
   return (
     <div className="relative size-full">
       <Frame2 />
-      <p className="absolute css-4hzbpn font-['Centra_No2:Regular',sans-serif] leading-[24px] left-0 not-italic text-[#191e3b] text-[16px] top-[32px] tracking-[-0.32px] w-[662px]">I found two great options, but there are also some great matches just in the neighbouring islands —would you like to see them?</p>
+      <p className="absolute css-4hzbpn font-['CentraNo2',sans-serif] leading-[24px] left-0 not-italic text-[#191e3b] text-[16px] top-[32px] tracking-[-0.32px] w-[662px]">I found two great options, but there are also some great matches just in the neighbouring islands —would you like to see them?</p>
       <Frame1 />
     </div>
   );

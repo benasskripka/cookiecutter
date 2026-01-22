@@ -136,7 +136,7 @@ function Frame() {
     <div className="absolute bg-white h-[130px] left-[24px] rounded-[32px] top-[623px] w-[405px]">
       <div className="overflow-clip relative rounded-[inherit] size-full">
         <ButtonContainer />
-        <p className="absolute css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] left-[159px] not-italic text-[14px] text-black text-center top-[20px] translate-x-[-50%]">Show me places that are really traditional|</p>
+        <p className="absolute css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] left-[159px] not-italic text-[14px] text-black text-center top-[20px] translate-x-[-50%]">Show me places that are really traditional|</p>
       </div>
       <div aria-hidden="true" className="absolute border border-[rgba(0,0,0,0.15)] border-solid inset-[-1px] pointer-events-none rounded-[33px] shadow-[0px_5px_15px_0px_rgba(0,0,0,0.1)]" />
     </div>
@@ -188,7 +188,7 @@ function Pill() {
           <ButtonPrimaryIconOnly />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Add Santa Fe plaza</p>
       </div>
     </div>
@@ -243,7 +243,7 @@ function Pill1() {
           <ButtonPrimaryIconOnly1 />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Show cheapest first</p>
       </div>
     </div>
@@ -295,7 +295,7 @@ function Pill2() {
           <ButtonPrimaryIconOnly2 />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Where’s best to stay?</p>
       </div>
     </div>

@@ -3,7 +3,7 @@ import svgPaths from "./svg-3ulgfyvsbz";
 function ButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white">Search</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white">Search</p>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function Frame() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[26px] top-[20px]">
       <Icon />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">Santa Fe traditional homes</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">Santa Fe traditional homes</p>
     </div>
   );
 }
@@ -63,7 +63,7 @@ function Frame1() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[559px] top-[20px]">
       <Icon1 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap">Add dates</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap">Add dates</p>
     </div>
   );
 }
@@ -89,7 +89,7 @@ function Frame2() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[721px] top-[20px]">
       <Icon2 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap">Add people</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap">Add people</p>
     </div>
   );
 }

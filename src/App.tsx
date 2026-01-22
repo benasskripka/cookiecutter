@@ -191,7 +191,7 @@ export default function App() {
   ).slice(0, 8);
 
   return (
-    <div className="bg-white overflow-x-hidden relative w-full min-h-screen font-['Centra_No2:Medium',sans-serif] pb-20">
+    <div className="bg-white overflow-x-hidden relative w-full min-h-screen font-['CentraNo2',sans-serif] font-medium pb-20">
       {/* Inject minimal Slick CSS manually to avoid build errors with fonts/assets */}
       <style>{`
         .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-touch-callout: none; -khtml-user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
@@ -255,7 +255,7 @@ export default function App() {
           <>
             {/* First Carousel Section */}
             <div className="mb-0">
-               <h2 className="font-['Centra_No2:Medium',sans-serif] text-[24px] text-[#191e3b] mb-6">Amazing pools</h2>
+               <h2 className="font-['CentraNo2',sans-serif] font-medium text-[24px] text-[#191e3b] mb-6">Amazing pools</h2>
                {properties.filter(p => 
                  p.amenities.some(a => a.toLowerCase().includes("pool")) || 
                  p.title.toLowerCase().includes("pool") ||
@@ -287,7 +287,7 @@ export default function App() {
 
             {/* Second Carousel Section */}
             <div className="mb-12">
-               <h2 className="font-['Centra_No2:Medium',sans-serif] text-[24px] text-[#191e3b] mb-6">Oceanfront luxury</h2>
+               <h2 className="font-['CentraNo2',sans-serif] font-medium text-[24px] text-[#191e3b] mb-6">Oceanfront luxury</h2>
                {oceanfrontLuxury.length > 0 ? (
                  <Slider {...sliderSettings}>
                    {oceanfrontLuxury.map((property: Property, index: number) => (

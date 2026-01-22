@@ -187,7 +187,7 @@ function Frame11() {
           <ButtonPrimaryIconOnly />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Added a pin on Wailea</p>
       </div>
     </div>
@@ -305,7 +305,7 @@ function Frame13() {
           <ButtonPrimaryIconOnly2 />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Added a pin on Wailea</p>
       </div>
     </div>
@@ -423,7 +423,7 @@ function Frame14() {
           <ButtonPrimaryIconOnly4 />
         </div>
       </div>
-      <div className="css-g0mm18 flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+      <div className="css-g0mm18 flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
         <p className="css-ew64yg leading-[1.25]">Added a pin on Wailea</p>
       </div>
     </div>

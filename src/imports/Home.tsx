@@ -13,7 +13,7 @@ function Frame3() {
 function ButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
     </div>
   );
 }
@@ -45,7 +45,7 @@ function Icon() {
 
 function Component() {
   return (
-    <div className="font-['Centra_No2:Medium',sans-serif] h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.75)] text-center text-nowrap w-[170px] whitespace-pre" data-name="Component 15">
+    <div className="font-['CentraNo2',sans-serif] font-medium h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.75)] text-center text-nowrap w-[170px] whitespace-pre" data-name="Component 15">
       <p className="absolute left-[85px] opacity-0 top-[-30px] translate-x-[-50%]">“Villa for a family near me”</p>
       <p className="absolute left-[52px] top-0 translate-x-[-50%]">“Destin, Florida”</p>
       <p className="absolute left-[67.5px] opacity-0 top-[30px] translate-x-[-50%]">“Condo in New York”</p>
@@ -83,7 +83,7 @@ function Frame4() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[387px] top-[20px]">
       <Icon1 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add dates</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add dates</p>
     </div>
   );
 }
@@ -109,7 +109,7 @@ function Frame5() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[549px] top-[20px]">
       <Icon2 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add people</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add people</p>
     </div>
   );
 }

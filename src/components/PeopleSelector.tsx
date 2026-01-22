@@ -84,10 +84,10 @@ function SelectionCard({ icon, label, description, value, onChange, min = 0 }: S
     >
       <div>
         {icon}
-        <h3 className="font-['Centra_No2:Medium',sans-serif] text-[16px] leading-[18px] text-black mb-1">
+        <h3 className="font-['CentraNo2',sans-serif] font-medium text-[16px] leading-[18px] text-black mb-1">
           {label}
         </h3>
-        <p className="font-['Centra_No2:Book',sans-serif] text-[14px] leading-[18px] text-[#6b7282]">
+        <p className="font-['CentraNo2',sans-serif] text-[14px] leading-[18px] text-[#6b7282]">
           {description}
         </p>
       </div>
@@ -104,7 +104,7 @@ function SelectionCard({ icon, label, description, value, onChange, min = 0 }: S
         {/* Value */}
         <span 
           className={`
-            font-['Centra_No2:Medium',sans-serif] text-[16px] leading-[18px] w-3 text-center transition-all duration-200
+            font-['CentraNo2',sans-serif] font-medium text-[16px] leading-[18px] w-3 text-center transition-all duration-200
             ${isSelected ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 absolute'}
           `}
         >

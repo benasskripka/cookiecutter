@@ -45,10 +45,10 @@ function SuggestionsFooter({ count }: { count: number }) {
 
   return (
     <div className="flex flex-col items-start w-full mt-8 mb-12">
-      <h3 className="font-['Centra_No2:Medium',sans-serif] leading-[20px] text-[18px] text-[#191e3b] mb-2">
+      <h3 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b] mb-2">
         Suggestion
       </h3>
-      <p className="font-['Centra_No2:Regular',sans-serif] leading-[24px] text-[#191e3b] text-[16px] tracking-[-0.32px] max-w-[662px] mb-6">
+      <p className="font-['CentraNo2',sans-serif] leading-[24px] text-[#191e3b] text-[16px] tracking-[-0.32px] max-w-[662px] mb-6">
         I found {countText} great {optionText}, but there are
         also some great matches just in the neighbouring islands
         —would you like to see them?
@@ -57,7 +57,7 @@ function SuggestionsFooter({ count }: { count: number }) {
       <div className="flex flex-wrap gap-2 items-center">
         {/* Not this time */}
         <button className="bg-[#f2f8fd] flex items-center px-[24px] py-[16px] rounded-[32px] hover:bg-[#e5f2fb] transition-colors">
-          <span className="font-['Centra_No2:Medium',sans-serif] text-[#191e3b] text-[14px] leading-[1.25]">
+          <span className="font-['CentraNo2',sans-serif] font-medium text-[#191e3b] text-[14px] leading-[1.25]">
             Not this time
           </span>
         </button>
@@ -67,7 +67,7 @@ function SuggestionsFooter({ count }: { count: number }) {
           <div className="flex items-center justify-center w-[20px]">
             <FooterIcon />
           </div>
-          <span className="font-['Centra_No2:Medium',sans-serif] text-[#191e3b] text-[14px] leading-[1.25]">
+          <span className="font-['CentraNo2',sans-serif] font-medium text-[#191e3b] text-[14px] leading-[1.25]">
             Kauaʻi (+3)
           </span>
         </button>
@@ -77,7 +77,7 @@ function SuggestionsFooter({ count }: { count: number }) {
           <div className="flex items-center justify-center w-[20px]">
             <FooterIcon />
           </div>
-          <span className="font-['Centra_No2:Medium',sans-serif] text-[#191e3b] text-[14px] leading-[1.25]">
+          <span className="font-['CentraNo2',sans-serif] font-medium text-[#191e3b] text-[14px] leading-[1.25]">
             Oʻahu (+15)
           </span>
         </button>
@@ -260,15 +260,15 @@ export function ContentWithLoadMore({
               {/* Section 1: Best matches */}
               <div className="flex flex-col gap-[16px] w-full shrink-0">
                 <div className="flex flex-col gap-[4px] w-full">
-                  <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] text-[14px] text-[#676a7d] pb-[8px]">
+                  <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d] pb-[8px]">
                     {totalCount || properties.length} results
                   </p>
                   {properties.length >= 4 && (
                     <>
-                      <h2 className="font-['Centra_No2:Medium',sans-serif] leading-[20px] text-[18px] text-[#191e3b]">
+                      <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
                         Top results
                       </h2>
-                      <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
+                      <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
                         {dynamicDescription}
                       </p>
                     </>
@@ -296,10 +296,10 @@ export function ContentWithLoadMore({
               {remainingMatches.length > 0 && (
                 <div className="flex flex-col gap-[16px] w-full shrink-0">
                   <div className="flex flex-col gap-[4px] w-full">
-                    <h2 className="font-['Centra_No2:Medium',sans-serif] leading-[20px] text-[18px] text-[#191e3b]">
+                    <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
                       Remaining results
                     </h2>
-                    <p className="font-['Centra_No2:Regular',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
+                    <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
                       Highly relevant matches based on your
                       preferences.
                     </p>
@@ -326,7 +326,7 @@ export function ContentWithLoadMore({
           {/* Load more section */}
           {hasMore && !loading && (
             <div className="box-border content-stretch flex flex-col gap-[16px] items-start pb-[120px] pt-[16px] px-0 relative shrink-0 w-full">
-              <h2 className="font-['Centra_No2:Medium',sans-serif] leading-[20px] text-[18px] text-[#191e3b]">
+              <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
                 Load more results
               </h2>
 
@@ -339,7 +339,7 @@ export function ContentWithLoadMore({
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
                     <InputIconLeft />
                   </div>
-                  <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+                  <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
                     <p className="leading-[1.25] whitespace-pre">
                       More like this
                     </p>
@@ -354,7 +354,7 @@ export function ContentWithLoadMore({
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
                     <InputIconLeft1 />
                   </div>
-                  <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+                  <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
                     <p className="leading-[1.25] whitespace-pre">
                       Try different
                     </p>
@@ -369,7 +369,7 @@ export function ContentWithLoadMore({
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
                     <InputIconLeft2 />
                   </div>
-                  <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+                  <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
                     <p className="leading-[1.25] whitespace-pre">
                       Not quite right
                     </p>

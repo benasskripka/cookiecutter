@@ -282,7 +282,7 @@ export function SearchSuggestions({ query, onSelect, variant = 'default' }: Sear
         return getSmartSuggestions().map((suggestion, index) => {
           const renderText = () => {
              if (!suggestion.boldPart) {
-               return <span className="font-['Centra_No2:Medium',sans-serif] leading-[18px]">{suggestion.text}</span>;
+               return <span className="font-['CentraNo2',sans-serif] font-medium leading-[18px]">{suggestion.text}</span>;
              }
              // Case insensitive replace for bolding
              const parts = suggestion.text.split(new RegExp(`(${suggestion.boldPart})`, 'gi'));
@@ -291,8 +291,8 @@ export function SearchSuggestions({ query, onSelect, variant = 'default' }: Sear
                <>
                  {parts.map((part, i) => (
                     part.toLowerCase() === suggestion.boldPart?.toLowerCase() ? 
-                    <span key={i} className="font-['Centra_No2:Medium',sans-serif] leading-[18px]">{part}</span> :
-                    <span key={i} className="font-['Centra_No2:Regular',sans-serif] leading-[20px]">{part}</span>
+                    <span key={i} className="font-['CentraNo2',sans-serif] font-medium leading-[18px]">{part}</span> :
+                    <span key={i} className="font-['CentraNo2',sans-serif] leading-[20px]">{part}</span>
                  ))}
                </>
              );

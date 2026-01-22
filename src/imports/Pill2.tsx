@@ -47,7 +47,7 @@ export default function Pill() {
               <ButtonPrimaryIconOnly />
             </div>
           </div>
-          <div className="flex flex-col font-['Centra_No2:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+          <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
             <p className="leading-[1.25] whitespace-pre">More like this</p>
           </div>
         </div>

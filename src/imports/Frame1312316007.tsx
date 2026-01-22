@@ -3,7 +3,7 @@ import svgPaths from "./svg-qohufkzzrq";
 function ButtonLabel() {
   return (
     <div className="content-stretch flex items-start justify-center relative shrink-0" data-name="_ / Button / Label">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white whitespace-pre">Search</p>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function Frame1() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[26px] top-[20px]">
       <Icon />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">Santa Fe|</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">Santa Fe|</p>
     </div>
   );
 }
@@ -63,7 +63,7 @@ function Frame2() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[387px] top-[20px]">
       <Icon1 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add dates</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add dates</p>
     </div>
   );
 }
@@ -89,7 +89,7 @@ function Frame3() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[549px] top-[20px]">
       <Icon2 />
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add people</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.5)] text-center text-nowrap whitespace-pre">Add people</p>
     </div>
   );
 }
@@ -109,8 +109,8 @@ function Icon3() {
 function ListItemText() {
   return (
     <div className="basis-0 content-stretch flex gap-[10px] grow items-start min-h-px min-w-px relative shrink-0" data-name="_ / ✏️ List item / Text">
-      <p className="[white-space-collapse:collapse] basis-0 font-['Centra_No2:Medium',sans-serif] grow h-[18px] leading-[0] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
-        <span className="font-['Centra_No2:Regular',sans-serif] leading-[20px]">{`Santa Fe `}</span>
+      <p className="[white-space-collapse:collapse] basis-0 font-['CentraNo2',sans-serif] font-medium grow h-[18px] leading-[0] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+        <span className="font-['CentraNo2',sans-serif] leading-[20px]">{`Santa Fe `}</span>
         <span className="leading-[18px]">homes</span>
       </p>
     </div>
@@ -157,7 +157,7 @@ function Icon4() {
 function ListItemText1() {
   return (
     <div className="basis-0 content-stretch flex gap-[10px] grow items-start min-h-px min-w-px relative shrink-0" data-name="_ / ✏️ List item / Text">
-      <p className="[white-space-collapse:collapse] basis-0 font-['Centra_No2:Medium',sans-serif] grow h-[18px] leading-[18px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">Santa Fe, New Mexico</p>
+      <p className="[white-space-collapse:collapse] basis-0 font-['CentraNo2',sans-serif] font-medium grow h-[18px] leading-[18px] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">Santa Fe, New Mexico</p>
     </div>
   );
 }
@@ -202,9 +202,9 @@ function Icon5() {
 function ListItemText2() {
   return (
     <div className="basis-0 content-stretch flex gap-[10px] grow items-start min-h-px min-w-px relative shrink-0" data-name="_ / ✏️ List item / Text">
-      <p className="[white-space-collapse:collapse] basis-0 font-['Centra_No2:Regular',sans-serif] grow h-[18px] leading-[0] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
+      <p className="[white-space-collapse:collapse] basis-0 font-['CentraNo2',sans-serif] grow h-[18px] leading-[0] min-h-px min-w-px not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[#191e3b] text-[14px] text-nowrap">
         <span className="leading-[20px]">{`Santa Fe `}</span>
-        <span className="font-['Centra_No2:Medium',sans-serif] leading-[18px]">apartments</span>
+        <span className="font-['CentraNo2',sans-serif] font-medium leading-[18px]">apartments</span>
       </p>
     </div>
   );

@@ -4,7 +4,7 @@ import imgImg0 from "figma:asset/e92712bc243a61fc6787c7a6063dd0fb03cdda06.png";
 function BadgeText() {
   return (
     <div className="content-stretch flex items-start relative shrink-0" data-name="Badge text">
-      <p className="css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white">Picked for you</p>
+      <p className="css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-white">Picked for you</p>
     </div>
   );
 }

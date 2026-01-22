@@ -51,14 +51,14 @@ export default function Frame() {
       <div className="absolute h-[469px] left-0 top-0 w-[1069px]" data-name="Screenshot 2026-01-20 at 7.42.33 am 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgScreenshot20260120At74233Am1} />
       </div>
-      <p className="absolute css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[0] left-[207.5px] not-italic text-[14px] text-black text-center top-[62px] translate-x-[-50%]">
+      <p className="absolute css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[0] left-[207.5px] not-italic text-[14px] text-black text-center top-[62px] translate-x-[-50%]">
         <span className="leading-[18px]">{`A holiday home for `}</span>
         <span className="leading-[18px] text-[#0f51ed]">next month</span>
       </p>
       <div className="absolute bg-white h-[141px] left-[60px] top-[114px] w-[376px]" />
-      <p className="absolute css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] left-[200.5px] not-italic text-[#1e2340] text-[14px] text-center top-[170px] translate-x-[-50%]">Flexible in February</p>
-      <p className="absolute css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] left-[137px] not-italic text-[#0f51ed] text-[14px] text-center top-[123px] translate-x-[-50%]">Set dates</p>
-      <p className="absolute css-ew64yg font-['Centra_No2:Medium',sans-serif] leading-[18px] left-[181px] not-italic text-[#1e2340] text-[14px] text-center top-[218px] translate-x-[-50%]">1 Feb - 28 Feb</p>
+      <p className="absolute css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] left-[200.5px] not-italic text-[#1e2340] text-[14px] text-center top-[170px] translate-x-[-50%]">Flexible in February</p>
+      <p className="absolute css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] left-[137px] not-italic text-[#0f51ed] text-[14px] text-center top-[123px] translate-x-[-50%]">Set dates</p>
+      <p className="absolute css-ew64yg font-['CentraNo2',sans-serif] font-medium leading-[18px] left-[181px] not-italic text-[#1e2340] text-[14px] text-center top-[218px] translate-x-[-50%]">1 Feb - 28 Feb</p>
       <IconGlyphCalendar />
       <IconGlyphSubdirectoryArrowRight />
       <IconGlyphSubdirectoryArrowRight1 />

@@ -51,7 +51,7 @@ function ButtonContainer() {
 function Frame() {
   return (
     <div className="absolute content-stretch flex gap-[12px] items-center left-[23.5px] top-[20px]">
-      <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">|</p>
+      <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap whitespace-pre">|</p>
     </div>
   );
 }

@@ -101,7 +101,7 @@ function SearchDiamondIcon({ active }: { active?: boolean }) {
 function FilterSection({ title, children }: { title: string, children: React.ReactNode }) {
   return (
     <div className="py-6 border-b border-[#EBEBEB] last:border-0">
-      <h3 className="font-['Centra_No2:Medium',sans-serif] text-[18px] text-[#191e3b] mb-4">{title}</h3>
+      <h3 className="font-['CentraNo2',sans-serif] font-medium text-[18px] text-[#191e3b] mb-4">{title}</h3>
       {children}
     </div>
   );
@@ -205,7 +205,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
                 <div className="flex flex-wrap gap-2">
                     {activeFilters.map((filter, idx) => (
                         <div key={`${filter.type}-${filter.value}-${idx}`} className="flex items-center gap-2 px-4 py-2 bg-[#F5F9FF] rounded-full">
-                            <span className="text-sm font-['Centra_No2:Medium',sans-serif] text-[#191E3B]">{filter.label}</span>
+                            <span className="text-sm font-['CentraNo2',sans-serif] font-medium text-[#191E3B]">{filter.label}</span>
                             <button 
                                 onClick={() => removeFilter(filter)}
                                 className="w-5 h-5 flex items-center justify-center rounded-full hover:bg-[#E5F0FF] text-[#191E3B] transition-colors"
@@ -225,7 +225,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
                             rating: null,
                             accessibility: []
                         })}
-                        className="text-sm font-['Centra_No2:Medium',sans-serif] text-[#222222] underline ml-2"
+                        className="text-sm font-['CentraNo2',sans-serif] font-medium text-[#222222] underline ml-2"
                     >
                         Clear all
                     </button>
@@ -268,14 +268,14 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
         <FilterSection title="Rooms and spaces">
            <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">Bedrooms</span>
+                <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">Bedrooms</span>
                 <div className="flex items-center gap-3">
                    <button 
                     onClick={() => onFilterChange({ ...filters, bedrooms: Math.max(0, filters.bedrooms - 1) })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
                      <Minus size={14} />
                    </button>
-                   <span className="w-4 text-center font-['Centra_No2:Regular',sans-serif]">{filters.bedrooms || 'Any'}</span>
+                   <span className="w-4 text-center font-['CentraNo2',sans-serif]">{filters.bedrooms || 'Any'}</span>
                    <button 
                     onClick={() => onFilterChange({ ...filters, bedrooms: filters.bedrooms + 1 })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
@@ -285,14 +285,14 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">Beds</span>
+                <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">Beds</span>
                 <div className="flex items-center gap-3">
                    <button 
                     onClick={() => onFilterChange({ ...filters, beds: Math.max(0, filters.beds - 1) })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
                      <Minus size={14} />
                    </button>
-                   <span className="w-4 text-center font-['Centra_No2:Regular',sans-serif]">{filters.beds || 'Any'}</span>
+                   <span className="w-4 text-center font-['CentraNo2',sans-serif]">{filters.beds || 'Any'}</span>
                    <button 
                     onClick={() => onFilterChange({ ...filters, beds: filters.beds + 1 })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
@@ -302,14 +302,14 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">Bathrooms</span>
+                <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">Bathrooms</span>
                 <div className="flex items-center gap-3">
                    <button 
                     onClick={() => onFilterChange({ ...filters, bathrooms: Math.max(0, filters.bathrooms - 1) })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
                      <Minus size={14} />
                    </button>
-                   <span className="w-4 text-center font-['Centra_No2:Regular',sans-serif]">{filters.bathrooms || 'Any'}</span>
+                   <span className="w-4 text-center font-['CentraNo2',sans-serif]">{filters.bathrooms || 'Any'}</span>
                    <button 
                     onClick={() => onFilterChange({ ...filters, bathrooms: filters.bathrooms + 1 })}
                     className="w-[32px] h-[32px] rounded-full border border-[#B0B0B0] flex items-center justify-center text-[#717171] hover:border-black hover:text-black">
@@ -327,7 +327,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
                    <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.propertyTypes.includes(type) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                       {filters.propertyTypes.includes(type) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
                    </div>
-                   <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">{type}</span>
+                   <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">{type}</span>
                 </label>
              ))}
           </div>
@@ -340,7 +340,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
                     <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.amenities.includes(item) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                        {filters.amenities.includes(item) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
                     </div>
-                    <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">{item}</span>
+                    <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">{item}</span>
                  </label>
               ))}
             </div>
@@ -371,7 +371,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
                     <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.accessibility.includes(item) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                        {filters.accessibility.includes(item) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
                     </div>
-                    <span className="font-['Centra_No2:Regular',sans-serif] text-[16px] text-[#222222]">{item}</span>
+                    <span className="font-['CentraNo2',sans-serif] text-[16px] text-[#222222]">{item}</span>
                  </label>
               ))}
             </div>
@@ -481,7 +481,7 @@ function UnifiedHeader({
               
               {activeCount > 0 && (
                  <div className="absolute top-[-2px] right-[-2px] min-w-[20px] h-[20px] px-1 bg-[#0F51ED] rounded-full flex items-center justify-center border-[2px] border-white z-40 shadow-sm">
-                    <span className="text-[11px] font-['Centra_No2:Bold',sans-serif] text-white leading-none">{activeCount}</span>
+                    <span className="text-[11px] font-['CentraNo2',sans-serif] font-bold text-white leading-none">{activeCount}</span>
                  </div>
               )}
 
@@ -529,13 +529,13 @@ function UnifiedHeader({
                   onChange={(e) => setDestination(e.target.value)}
                   onKeyDown={handleSearchSubmit}
                   onClick={(e) => e.stopPropagation()}
-                  className="font-['Centra_No2:Medium',sans-serif] leading-[18px] text-[14px] text-black bg-transparent outline-none w-full border-none p-0 text-left"
+                  className="font-['CentraNo2',sans-serif] font-medium leading-[18px] text-[14px] text-black bg-transparent outline-none w-full border-none p-0 text-left"
                   placeholder="Where to?"
                 />
               ) : (
                 <motion.p 
                   layout="position"
-                  className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-left text-nowrap"
+                  className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-left text-nowrap"
                 >
                   {destination}
                 </motion.p>
@@ -570,7 +570,7 @@ function UnifiedHeader({
                   </defs>
                 </svg>
               </div>
-              <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">{datesText}</p>
+              <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">{datesText}</p>
             </div>
 
             {/* People Input */}
@@ -601,7 +601,7 @@ function UnifiedHeader({
                   </defs>
                 </svg>
               </div>
-              <p className="font-['Centra_No2:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">{peopleText}</p>
+              <p className="font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">{peopleText}</p>
             </div>
 
             {/* Diamond Icon */}
@@ -612,10 +612,10 @@ function UnifiedHeader({
 
         {/* Right: Nav Buttons */}
         <div className="flex-1 flex justify-end gap-[8px] items-center">
-          <button className="font-['Centra_No2:Medium',sans-serif] text-[16px] text-[#191e3b] px-[16px] py-[10px] rounded-full hover:bg-[#F7F7F7] transition-colors cursor-pointer">
+          <button className="font-['CentraNo2',sans-serif] font-medium text-[16px] text-[#191e3b] px-[16px] py-[10px] rounded-full hover:bg-[#F7F7F7] transition-colors cursor-pointer">
             Support
           </button>
-          <button className="font-['Centra_No2:Medium',sans-serif] text-[16px] text-[#191e3b] px-[16px] py-[10px] rounded-full hover:bg-[#F7F7F7] transition-colors cursor-pointer">
+          <button className="font-['CentraNo2',sans-serif] font-medium text-[16px] text-[#191e3b] px-[16px] py-[10px] rounded-full hover:bg-[#F7F7F7] transition-colors cursor-pointer">
             Sign in
           </button>
         </div>

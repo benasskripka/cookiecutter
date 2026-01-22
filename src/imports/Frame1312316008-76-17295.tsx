@@ -2,7 +2,7 @@ import svgPaths from "./svg-73heqtm1r3";
 
 function Component() {
   return (
-    <div className="absolute font-['Centra_No2:Medium',sans-serif] h-[18px] leading-[18px] left-[24px] not-italic text-[14px] text-[rgba(0,0,0,0.75)] text-center top-[20px] w-[170px]" data-name="Component 16">
+    <div className="absolute font-['CentraNo2',sans-serif] font-medium h-[18px] leading-[18px] left-[24px] not-italic text-[14px] text-[rgba(0,0,0,0.75)] text-center top-[20px] w-[170px]" data-name="Component 16">
       <p className="absolute css-ew64yg left-[103px] opacity-0 top-[-30px] translate-x-[-50%]">{`"Add Santa Fe plaza to the map"`}</p>
       <p className="absolute css-ew64yg left-[77.5px] top-0 translate-x-[-50%]">“Show only cozy places”</p>
       <p className="absolute css-ew64yg left-[110.5px] opacity-0 top-[30px] translate-x-[-50%]">{`"Where's best to stay in Santa Fe?"`}</p>
