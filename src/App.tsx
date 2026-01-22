@@ -230,7 +230,7 @@ export default function App() {
 
       {/* Hero Text */}
       <div className="absolute flex flex-col justify-center leading-[0] left-1/2 not-italic text-[#fdf1ec] text-[32px] text-center text-shadow-[0px_0px_25px_black] top-[178.5px] tracking-[-0.32px] translate-x-[-50%] translate-y-[-50%] w-full max-w-[488px] px-4 z-10">
-        <p className="leading-[1.5] text-[rgb(255,255,255)]">Find your home.</p>
+        <p className="leading-[1.5] text-[rgb(255,255,255)]">Entire place, just for you.</p>
       </div>
 
       {/* Search Bar Container */}

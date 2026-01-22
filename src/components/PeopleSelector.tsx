@@ -182,14 +182,14 @@ export function PeopleSelector({ counts, onChange, compact = false, onHeightChan
         <SelectionCard
           icon={<IconGlyphPeople />}
           label="Adults"
-          description="Ages 13 or above"
+          description="Ages 18 or above"
           value={counts.adults}
           onChange={(val) => updateCount('adults', val)}
         />
         <SelectionCard
           icon={<IconGlyphChild />}
           label="Children"
-          description="Ages 2–12"
+          description="Ages 2–18"
           value={counts.children}
           onChange={(val) => updateCount('children', val)}
         />
