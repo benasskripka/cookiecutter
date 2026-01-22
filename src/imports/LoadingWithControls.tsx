@@ -720,14 +720,44 @@ function Frame({ properties, pois }: { properties: Property[], pois?: POI[] }) {
   );
 }
 
-function Content18({ query, pois, filters, isParsing = false }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean }) {
+function Content18({ query, pois, filters, isParsing = false, onResetFilters }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean, onResetFilters?: () => void }) {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(16);
   const [autoLoadKey, setAutoLoadKey] = useState(0);
+  const [dynamicDescription, setDynamicDescription] = useState("");
+
+  // Fetch AI description - called immediately when properties arrive
+  const fetchDescription = async (searchQuery: string, topProperties: Property[]) => {
+    if (topProperties.length === 0) return;
+    
+    try {
+      const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-217a788a/generate-description`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${publicAnonKey}`
+        },
+        body: JSON.stringify({
+          query: searchQuery,
+          properties: topProperties.slice(0, 4)
+        })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        if (data.description) {
+          setDynamicDescription(data.description);
+        }
+      }
+    } catch (error) {
+      console.error("Failed to fetch AI description:", error);
+    }
+  };
 
   const fetchProperties = async (searchQuery?: string) => {
     setLoading(true);
+    setDynamicDescription(""); // Clear description for new search
     // Reset visible count and auto-load key on new search
     setVisibleCount(16);
     setAutoLoadKey(prev => prev + 1);
@@ -804,6 +834,9 @@ function Content18({ query, pois, filters, isParsing = false }: { query?: string
       });
       
       setProperties(mappedProperties);
+      
+      // Start fetching description immediately (in parallel with UI update)
+      fetchDescription(searchQuery || "", mappedProperties);
     } catch (err) {
       console.error(err);
     } finally {
@@ -893,6 +926,8 @@ function Content18({ query, pois, filters, isParsing = false }: { query?: string
           onLoadMore={() => setVisibleCount(prev => prev + 12)}
           totalCount={filteredProperties.length}
           autoLoadKey={autoLoadKey}
+          onResetFilters={onResetFilters}
+          dynamicDescription={dynamicDescription}
         />
       </div>
       <Frame properties={loading || isParsing ? [] : visibleProperties} pois={pois} />
@@ -900,10 +935,10 @@ function Content18({ query, pois, filters, isParsing = false }: { query?: string
   );
 }
 
-function MaxWrapper({ query, pois, filters, isParsing }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean }) {
+function MaxWrapper({ query, pois, filters, isParsing, onResetFilters }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean, onResetFilters?: () => void }) {
   return (
     <div className="w-full h-full flex" data-name="Max wrapper">
-      <Content18 query={query} pois={pois} filters={filters} isParsing={isParsing} />
+      <Content18 query={query} pois={pois} filters={filters} isParsing={isParsing} onResetFilters={onResetFilters} />
     </div>
   );
 }
@@ -1109,7 +1144,16 @@ export default function LoadingWithControls({ searchData, onLogoClick }: { searc
           animate={{ width: isChatOpen ? "calc(100% - 450px)" : "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
-          <MaxWrapper query={searchQuery} pois={mapPOIs} filters={filters} isParsing={isParsing} />
+          <MaxWrapper query={searchQuery} pois={mapPOIs} filters={filters} isParsing={isParsing} onResetFilters={() => setFilters({
+            priceRange: { min: 0, max: 10000 },
+            bedrooms: 0,
+            beds: 0,
+            bathrooms: 0,
+            propertyTypes: [],
+            amenities: [],
+            rating: null,
+            accessibility: []
+          })} />
         </motion.div>
 
         {/* Chat Sheet Pane */}

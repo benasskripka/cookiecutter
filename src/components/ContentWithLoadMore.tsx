@@ -2,12 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import svgPaths from "../imports/svg-guroeiypcj";
 import svgPathsPill from "../imports/svg-ujtb498f3x";
-import svgPathsInput from "../imports/svg-ab2pa14a0g";
 import svgPathsFooter from "../imports/svg-x8ycsi1j6p";
 import { Property } from "../data/properties";
 import { PropertyCard } from "./PropertyCard";
 import { SearchLoader } from "./SearchLoader";
-import { projectId, publicAnonKey } from "../utils/supabase/info";
 
 function FooterIcon() {
   return (
@@ -31,7 +29,7 @@ function FooterIcon() {
   );
 }
 
-function SuggestionsFooter({ count }: { count: number }) {
+function SuggestionsFooter({ count, onResetFilters }: { count: number; onResetFilters?: () => void }) {
   const countText =
     count === 0
       ? "no"
@@ -45,7 +43,7 @@ function SuggestionsFooter({ count }: { count: number }) {
   const optionText = count === 1 ? "option" : "options";
 
   return (
-    <div className="flex flex-col items-start w-full mt-8 mb-12">
+    <div className="flex flex-col items-start w-full">
       <h3 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b] mb-2">
         Suggestion
       </h3>
@@ -56,10 +54,13 @@ function SuggestionsFooter({ count }: { count: number }) {
       </p>
 
       <div className="flex flex-wrap gap-2 items-center">
-        {/* Not this time */}
-        <button className="bg-[#f2f8fd] flex items-center px-[24px] py-[16px] rounded-[32px] hover:bg-[#e5f2fb] transition-colors">
+        {/* Not this time / See all results */}
+        <button 
+          className="bg-[#f2f8fd] flex items-center px-[24px] py-[16px] rounded-[32px] hover:bg-[#e5f2fb] transition-colors"
+          onClick={count === 0 ? onResetFilters : undefined}
+        >
           <span className="font-['CentraNo2',sans-serif] font-medium text-[#191e3b] text-[14px] leading-[1.25]">
-            Not this time
+            {count === 0 ? "See all results" : "Not this time"}
           </span>
         </button>
 
@@ -185,6 +186,8 @@ export function ContentWithLoadMore({
   onLoadMore,
   totalCount,
   autoLoadKey,
+  onResetFilters,
+  dynamicDescription = "",
 }: {
   properties: Property[];
   loading: boolean;
@@ -193,23 +196,26 @@ export function ContentWithLoadMore({
   onLoadMore: () => void;
   totalCount?: number;
   autoLoadKey?: string | number; // Changes when search changes to reset auto-load state
+  onResetFilters?: () => void;
+  dynamicDescription?: string; // AI-generated description passed from parent
 }) {
   // Split data into sections
   const bestMatches = properties.slice(0, 4);
   const remainingMatches = properties.slice(4);
-
-  const [dynamicDescription, setDynamicDescription] = useState("The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts like kitchens and parking.");
   
   // Auto-load state
   const [hasAutoLoaded, setHasAutoLoaded] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
   // Track the count of properties before auto-load to animate new ones
   const countBeforeAutoLoadRef = useRef<number>(0);
+  // Track whether load was triggered by scroll or button ('scroll' | 'button')
+  const loadTriggerRef = useRef<'scroll' | 'button'>('scroll');
   
   // Reset auto-load state when autoLoadKey changes (new search)
   useEffect(() => {
     setHasAutoLoaded(false);
     countBeforeAutoLoadRef.current = 0;
+    loadTriggerRef.current = 'scroll';
   }, [autoLoadKey]);
   
   // IntersectionObserver to auto-load when sentinel is visible
@@ -225,6 +231,7 @@ export function ContentWithLoadMore({
         if (entry.isIntersecting && !hasAutoLoaded) {
           // Store current count before loading more
           countBeforeAutoLoadRef.current = properties.length;
+          loadTriggerRef.current = 'scroll';
           setHasAutoLoaded(true);
           onLoadMore();
         }
@@ -242,64 +249,13 @@ export function ContentWithLoadMore({
       observer.disconnect();
     };
   }, [loading, hasMore, hasAutoLoaded, onLoadMore, properties.length]);
-
-  // Track which autoLoadKey we've already fetched a description for
-  const lastFetchedKeyRef = useRef<string | number | undefined>(undefined);
   
-  // Fetch AI description only when search/filters change (autoLoadKey changes)
-  useEffect(() => {
-    if (properties.length === 0) return;
-    
-    // Only fetch new description if autoLoadKey changed (new search/filter)
-    const shouldFetchNewDescription = autoLoadKey !== lastFetchedKeyRef.current;
-    
-    // Default immediate update based on basic heuristics (instant feedback)
-    // This runs first so the user sees something relevant immediately while AI loads
-    const matches = properties.slice(0, 4);
-    
-    if (shouldFetchNewDescription) {
-      const keywords = matches.flatMap(p => (p.highlight + " " + p.title).toLowerCase().split(" "));
-      const hasOcean = keywords.some(k => k.includes("ocean") || k.includes("beach"));
-      const hasPool = matches.some(p => p.amenities.some(a => a.toLowerCase().includes("pool")));
-      
-      let tempDesc = "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts.";
-      if (hasOcean && hasPool) {
-        tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, refreshing pools, and authentic island charm.";
-      } else if (hasOcean) {
-        tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, beach access, and authentic island charm.";
-      }
-      setDynamicDescription(tempDesc);
-
-      // Fetch AI enhanced description
-      async function fetchAiDescription() {
-        try {
-          const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-217a788a/generate-description`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${publicAnonKey}`
-            },
-            body: JSON.stringify({
-              query,
-              properties: matches
-            })
-          });
-          
-          if (response.ok) {
-            const data = await response.json();
-            if (data.description) {
-              setDynamicDescription(data.description);
-            }
-          }
-        } catch (error) {
-          console.error("Failed to fetch AI description:", error);
-        }
-      }
-
-      fetchAiDescription();
-      lastFetchedKeyRef.current = autoLoadKey;
-    }
-  }, [properties, query, autoLoadKey]);
+  // Handle button-triggered load more
+  const handleButtonLoadMore = () => {
+    countBeforeAutoLoadRef.current = properties.length;
+    loadTriggerRef.current = 'button';
+    onLoadMore();
+  };
 
   return (
     <div
@@ -325,27 +281,25 @@ export function ContentWithLoadMore({
                       <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
                         Top results
                       </h2>
-                      <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
-                        {dynamicDescription}
-                      </p>
+                      {dynamicDescription ? (
+                        <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d] animate-in fade-in duration-300">
+                          {dynamicDescription}
+                        </p>
+                      ) : (
+                        <div className="h-[18px] w-[80%] max-w-[500px] bg-gray-100 rounded animate-pulse" />
+                      )}
                     </>
                   )}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] w-full">
-                  {bestMatches.length > 0 ? (
-                    bestMatches.map((property, index) => (
-                      <PropertyCard
-                        key={property.id}
-                        property={property}
-                        index={index}
-                      />
-                    ))
-                  ) : (
-                    <p className="text-gray-500">
-                      No properties found matching your
-                      criteria.
-                    </p>
-                  )}
+                  {bestMatches.map((property, index) => (
+                    <PropertyCard
+                      key={property.id}
+                      property={property}
+                      index={index}
+                      showDescription={properties.length < 4}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -364,20 +318,25 @@ export function ContentWithLoadMore({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] w-full">
                     {remainingMatches.map((property, index) => {
                       const globalIndex = index + 4;
-                      const isNewFromAutoLoad = hasAutoLoaded && countBeforeAutoLoadRef.current > 0 && globalIndex >= countBeforeAutoLoadRef.current;
+                      const isNewFromLoad = countBeforeAutoLoadRef.current > 0 && globalIndex >= countBeforeAutoLoadRef.current;
                       
-                      if (isNewFromAutoLoad) {
+                      if (isNewFromLoad) {
                         // Calculate stagger delay based on position within new batch
                         const positionInNewBatch = globalIndex - countBeforeAutoLoadRef.current;
+                        // Faster animation for button-triggered loads
+                        const isButtonTriggered = loadTriggerRef.current === 'button';
+                        const duration = isButtonTriggered ? 0.2 : 0.4;
+                        const staggerDelay = isButtonTriggered ? 0.03 : 0.08;
+                        
                         return (
                           <motion.div
                             key={property.id}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: isButtonTriggered ? 12 : 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ 
-                              duration: 0.4, 
+                              duration, 
                               ease: "easeOut",
-                              delay: positionInNewBatch * 0.08 // Stagger each card
+                              delay: positionInNewBatch * staggerDelay
                             }}
                           >
                             <PropertyCard
@@ -402,7 +361,7 @@ export function ContentWithLoadMore({
 
               {/* Suggestions Footer for low results */}
               {properties.length < 4 && (
-                <SuggestionsFooter count={properties.length} />
+                <SuggestionsFooter count={properties.length} onResetFilters={onResetFilters} />
               )}
             </>
           )}
@@ -422,7 +381,7 @@ export function ContentWithLoadMore({
               <div className="content-stretch flex flex-wrap gap-[8px] items-center relative shrink-0">
                 {/* More like this button */}
                 <button
-                  onClick={onLoadMore}
+                  onClick={handleButtonLoadMore}
                   className="bg-[#f2f8fd] box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[32px] shrink-0 cursor-pointer hover:bg-[#e5f2fb] transition-colors"
                 >
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
@@ -437,7 +396,7 @@ export function ContentWithLoadMore({
 
                 {/* Try different button */}
                 <button
-                  onClick={onLoadMore}
+                  onClick={handleButtonLoadMore}
                   className="bg-[#f2f8fd] box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[32px] shrink-0 cursor-pointer hover:bg-[#e5f2fb] transition-colors"
                 >
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">
@@ -452,7 +411,7 @@ export function ContentWithLoadMore({
 
                 {/* Not quite right button */}
                 <button
-                  onClick={onLoadMore}
+                  onClick={handleButtonLoadMore}
                   className="bg-[#f2f8fd] box-border content-stretch flex gap-[8px] items-center overflow-clip px-[24px] py-[16px] relative rounded-[32px] shrink-0 cursor-pointer hover:bg-[#e5f2fb] transition-colors"
                 >
                   <div className="flex h-[18.773px] items-center justify-center relative shrink-0 w-[20.03px]">

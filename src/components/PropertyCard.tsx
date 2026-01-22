@@ -13,7 +13,7 @@ function IconGlyphFavoriteBorder() {
   );
 }
 
-export function PropertyCard({ property, index, className }: { property: Property; index: number; className?: string }) {
+export function PropertyCard({ property, index, className, showDescription }: { property: Property; index: number; className?: string; showDescription?: boolean }) {
   return (
     <div className={`basis-0 content-stretch flex flex-col grow min-h-px min-w-px overflow-clip relative shrink-0 ${className || ''}`}>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
@@ -104,7 +104,9 @@ export function PropertyCard({ property, index, className }: { property: Propert
 
                 <div className="content-stretch flex gap-[4px] items-start relative shrink-0 w-full">
                   <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative text-[rgb(25,30,59)] text-[14px] whitespace-normal">
-                    {property.highlight?.split(';').map(t => t.trim()).join(' · ')}
+                    {showDescription && property.description 
+                      ? property.description 
+                      : property.highlight?.split(';').map(t => t.trim()).join(' · ')}
                   </p>
                 </div>
               </div>
