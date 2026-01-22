@@ -191,7 +191,7 @@ export default function App() {
   ).slice(0, 8);
 
   return (
-    <div className="bg-white overflow-x-hidden relative w-full min-h-screen font-['CentraNo2',sans-serif] font-medium pb-20">
+    <div className="bg-white overflow-x-hidden relative w-full min-h-screen font-['CentraNo2',sans-serif] font-normal pb-20">
       {/* Inject minimal Slick CSS manually to avoid build errors with fonts/assets */}
       <style>{`
         .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-touch-callout: none; -khtml-user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
@@ -230,7 +230,7 @@ export default function App() {
 
       {/* Hero Text */}
       <div className="absolute flex flex-col justify-center leading-[0] left-1/2 not-italic text-[#fdf1ec] text-[32px] text-center text-shadow-[0px_0px_25px_black] top-[178.5px] tracking-[-0.32px] translate-x-[-50%] translate-y-[-50%] w-full max-w-[488px] px-4 z-10">
-        <p className="leading-[1.5] text-[rgb(255,255,255)]">Entire place, just for you.</p>
+        <p className="leading-[1.5] text-[rgb(255,255,255)] font-medium">Entire place, just for you.</p>
       </div>
 
       {/* Search Bar Container */}

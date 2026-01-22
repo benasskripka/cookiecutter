@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import svgPaths from "../imports/svg-guroeiypcj";
 import svgPathsPill from "../imports/svg-ujtb498f3x";
 import svgPathsInput from "../imports/svg-ab2pa14a0g";
@@ -183,6 +184,7 @@ export function ContentWithLoadMore({
   hasMore,
   onLoadMore,
   totalCount,
+  autoLoadKey,
 }: {
   properties: Property[];
   loading: boolean;
@@ -190,59 +192,114 @@ export function ContentWithLoadMore({
   hasMore: boolean;
   onLoadMore: () => void;
   totalCount?: number;
+  autoLoadKey?: string | number; // Changes when search changes to reset auto-load state
 }) {
   // Split data into sections
   const bestMatches = properties.slice(0, 4);
   const remainingMatches = properties.slice(4);
 
   const [dynamicDescription, setDynamicDescription] = useState("The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts like kitchens and parking.");
+  
+  // Auto-load state
+  const [hasAutoLoaded, setHasAutoLoaded] = useState(false);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  // Track the count of properties before auto-load to animate new ones
+  const countBeforeAutoLoadRef = useRef<number>(0);
+  
+  // Reset auto-load state when autoLoadKey changes (new search)
+  useEffect(() => {
+    setHasAutoLoaded(false);
+    countBeforeAutoLoadRef.current = 0;
+  }, [autoLoadKey]);
+  
+  // IntersectionObserver to auto-load when sentinel is visible
+  useEffect(() => {
+    if (loading || !hasMore || hasAutoLoaded) return;
+    
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !hasAutoLoaded) {
+          // Store current count before loading more
+          countBeforeAutoLoadRef.current = properties.length;
+          setHasAutoLoaded(true);
+          onLoadMore();
+        }
+      },
+      {
+        root: null,
+        rootMargin: "100px", // Trigger slightly before reaching the bottom
+        threshold: 0,
+      }
+    );
+    
+    observer.observe(sentinel);
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, [loading, hasMore, hasAutoLoaded, onLoadMore, properties.length]);
 
+  // Track which autoLoadKey we've already fetched a description for
+  const lastFetchedKeyRef = useRef<string | number | undefined>(undefined);
+  
+  // Fetch AI description only when search/filters change (autoLoadKey changes)
   useEffect(() => {
     if (properties.length === 0) return;
-
+    
+    // Only fetch new description if autoLoadKey changed (new search/filter)
+    const shouldFetchNewDescription = autoLoadKey !== lastFetchedKeyRef.current;
+    
     // Default immediate update based on basic heuristics (instant feedback)
     // This runs first so the user sees something relevant immediately while AI loads
     const matches = properties.slice(0, 4);
-    const keywords = matches.flatMap(p => (p.highlight + " " + p.title).toLowerCase().split(" "));
-    const hasOcean = keywords.some(k => k.includes("ocean") || k.includes("beach"));
-    const hasPool = matches.some(p => p.amenities.some(a => a.toLowerCase().includes("pool")));
     
-    let tempDesc = "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts.";
-    if (hasOcean && hasPool) {
-      tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, refreshing pools, and authentic island charm.";
-    } else if (hasOcean) {
-      tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, beach access, and authentic island charm.";
-    }
-    setDynamicDescription(tempDesc);
-
-    // Fetch AI enhanced description
-    async function fetchAiDescription() {
-      try {
-        const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-217a788a/generate-description`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${publicAnonKey}`
-          },
-          body: JSON.stringify({
-            query,
-            properties: matches
-          })
-        });
-        
-        if (response.ok) {
-          const data = await response.json();
-          if (data.description) {
-            setDynamicDescription(data.description);
-          }
-        }
-      } catch (error) {
-        console.error("Failed to fetch AI description:", error);
+    if (shouldFetchNewDescription) {
+      const keywords = matches.flatMap(p => (p.highlight + " " + p.title).toLowerCase().split(" "));
+      const hasOcean = keywords.some(k => k.includes("ocean") || k.includes("beach"));
+      const hasPool = matches.some(p => p.amenities.some(a => a.toLowerCase().includes("pool")));
+      
+      let tempDesc = "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts.";
+      if (hasOcean && hasPool) {
+        tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, refreshing pools, and authentic island charm.";
+      } else if (hasOcean) {
+        tempDesc = "The highlighted Maui rentals stand out for stunning ocean views, beach access, and authentic island charm.";
       }
-    }
+      setDynamicDescription(tempDesc);
 
-    fetchAiDescription();
-  }, [properties, query]);
+      // Fetch AI enhanced description
+      async function fetchAiDescription() {
+        try {
+          const response = await fetch(`https://${projectId}.supabase.co/functions/v1/make-server-217a788a/generate-description`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${publicAnonKey}`
+            },
+            body: JSON.stringify({
+              query,
+              properties: matches
+            })
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            if (data.description) {
+              setDynamicDescription(data.description);
+            }
+          }
+        } catch (error) {
+          console.error("Failed to fetch AI description:", error);
+        }
+      }
+
+      fetchAiDescription();
+      lastFetchedKeyRef.current = autoLoadKey;
+    }
+  }, [properties, query, autoLoadKey]);
 
   return (
     <div
@@ -305,13 +362,40 @@ export function ContentWithLoadMore({
                     </p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] w-full">
-                    {remainingMatches.map((property, index) => (
-                      <PropertyCard
-                        key={property.id}
-                        property={property}
-                        index={index + 4}
-                      />
-                    ))}
+                    {remainingMatches.map((property, index) => {
+                      const globalIndex = index + 4;
+                      const isNewFromAutoLoad = hasAutoLoaded && countBeforeAutoLoadRef.current > 0 && globalIndex >= countBeforeAutoLoadRef.current;
+                      
+                      if (isNewFromAutoLoad) {
+                        // Calculate stagger delay based on position within new batch
+                        const positionInNewBatch = globalIndex - countBeforeAutoLoadRef.current;
+                        return (
+                          <motion.div
+                            key={property.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ 
+                              duration: 0.4, 
+                              ease: "easeOut",
+                              delay: positionInNewBatch * 0.08 // Stagger each card
+                            }}
+                          >
+                            <PropertyCard
+                              property={property}
+                              index={globalIndex}
+                            />
+                          </motion.div>
+                        );
+                      }
+                      
+                      return (
+                        <PropertyCard
+                          key={property.id}
+                          property={property}
+                          index={globalIndex}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -323,8 +407,13 @@ export function ContentWithLoadMore({
             </>
           )}
 
-          {/* Load more section */}
-          {hasMore && !loading && (
+          {/* Sentinel for auto-loading - placed before load more section */}
+          {hasMore && !loading && !hasAutoLoaded && (
+            <div ref={sentinelRef} className="w-full h-1" aria-hidden="true" />
+          )}
+
+          {/* Load more section - only show after auto-load has triggered */}
+          {hasMore && !loading && hasAutoLoaded && (
             <div className="box-border content-stretch flex flex-col gap-[16px] items-start pb-[120px] pt-[16px] px-0 relative shrink-0 w-full">
               <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
                 Load more results

@@ -724,11 +724,13 @@ function Content18({ query, pois, filters, isParsing = false }: { query?: string
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(16);
+  const [autoLoadKey, setAutoLoadKey] = useState(0);
 
   const fetchProperties = async (searchQuery?: string) => {
     setLoading(true);
-    // Reset visible count on new search
+    // Reset visible count and auto-load key on new search
     setVisibleCount(16);
+    setAutoLoadKey(prev => prev + 1);
     
     try {
       let url = `https://${projectId}.supabase.co/functions/v1/make-server-217a788a/properties`;
@@ -890,6 +892,7 @@ function Content18({ query, pois, filters, isParsing = false }: { query?: string
           hasMore={hasMore}
           onLoadMore={() => setVisibleCount(prev => prev + 12)}
           totalCount={filteredProperties.length}
+          autoLoadKey={autoLoadKey}
         />
       </div>
       <Frame properties={loading || isParsing ? [] : visibleProperties} pois={pois} />
