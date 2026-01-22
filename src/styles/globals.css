@@ -1,19 +1,84 @@
 @custom-variant dark (&:is(.dark *));
 
-/* Polyfill for missing Centra font using Plus Jakarta Sans (Geometric Sans alternative) */
+/* Centra No2 (local files in /public/fonts) */
 @font-face {
-  font-family: 'Centra_No2:Medium';
-  src: url('https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2') format('woff2');
+  font-family: "Centra_No2:Light";
+  src: url("/fonts/CentraNo2-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Light";
+  src: url("/fonts/CentraNo2-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Regular";
+  src: url("/fonts/CentraNo2-Reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Regular";
+  src: url("/fonts/CentraNo2-RegItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Some Figma exports reference "Book"; map it to Regular (closest available in provided files). */
+@font-face {
+  font-family: "Centra_No2:Book";
+  src: url("/fonts/CentraNo2-Reg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Book";
+  src: url("/fonts/CentraNo2-RegItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Medium";
+  src: url("/fonts/CentraNo2-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Centra_No2:Regular';
-  src: url('https://cdn.jsdelivr.net/npm/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');
-  font-weight: 400;
+  font-family: "Centra_No2:Medium";
+  src: url("/fonts/CentraNo2-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Bold";
+  src: url("/fonts/CentraNo2-Bold.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Centra_No2:Bold";
+  src: url("/fonts/CentraNo2-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
