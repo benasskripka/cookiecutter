@@ -42,7 +42,8 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   const rotatingValues = [
     "Santa Fe traditional homes",
     "Condo in New York",
-    "Villa for a family near me"
+    "Villa for a family near me",
+    "Destin, Florida"
   ];
 
   useEffect(() => {

@@ -24,8 +24,13 @@ export function RealMap({ properties, pois = [] }: { properties: Property[], poi
   const defaultCenter: [number, number] = [20.7984, -156.3319];
   const defaultZoom = 10;
 
+  // Handle wheel events on map container to prevent page scroll
+  const handleMapWheel = (e: React.WheelEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="size-full overflow-hidden relative">
+    <div className="size-full overflow-hidden relative" onWheel={handleMapWheel}>
       <Map 
         provider={mapProvider}
         defaultCenter={defaultCenter} 

@@ -6,6 +6,7 @@ import svgPathsFooter from "../imports/svg-x8ycsi1j6p";
 import { Property } from "../data/properties";
 import { PropertyCard } from "./PropertyCard";
 import { SearchLoader } from "./SearchLoader";
+import { ResultsInsightsStrip } from "./ResultsInsightsStrip";
 
 function FooterIcon() {
   return (
@@ -202,6 +203,11 @@ export function ContentWithLoadMore({
   // Split data into sections
   const bestMatches = properties.slice(0, 4);
   const remainingMatches = properties.slice(4);
+
+  const avgPriceUsd =
+    properties.length > 0
+      ? properties.reduce((sum, p) => sum + (Number(p.price) || 0), 0) / properties.length
+      : undefined;
   
   // Auto-load state
   const [hasAutoLoaded, setHasAutoLoaded] = useState(false);
@@ -259,7 +265,7 @@ export function ContentWithLoadMore({
 
   return (
     <div
-      className="relative size-full overflow-y-auto"
+      className="relative size-full overflow-y-auto overflow-x-hidden overscroll-contain"
       data-name="Content"
     >
       <div className="min-h-full w-full">
@@ -270,24 +276,19 @@ export function ContentWithLoadMore({
             </div>
           ) : (
             <>
+              {/* Insights strip - horizontally scrollable */}
+              <div className="w-full overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+                <ResultsInsightsStrip description={dynamicDescription} avgPriceUsd={avgPriceUsd} />
+              </div>
+
               {/* Section 1: Best matches */}
               <div className="flex flex-col gap-[16px] w-full shrink-0">
                 <div className="flex flex-col gap-[4px] w-full">
-                  <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d] pb-[8px]">
-                    {totalCount || properties.length} results
-                  </p>
                   {properties.length >= 4 && (
                     <>
-                      <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
-                        Top results
+                      <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[28px] text-[24px] tracking-[-0.025em] text-[#191e3b]">
+                        Top matches
                       </h2>
-                      {dynamicDescription ? (
-                        <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d] animate-in fade-in duration-300">
-                          {dynamicDescription}
-                        </p>
-                      ) : (
-                        <div className="h-[18px] w-[80%] max-w-[500px] bg-gray-100 rounded animate-pulse" />
-                      )}
                     </>
                   )}
                 </div>
@@ -307,13 +308,9 @@ export function ContentWithLoadMore({
               {remainingMatches.length > 0 && (
                 <div className="flex flex-col gap-[16px] w-full shrink-0">
                   <div className="flex flex-col gap-[4px] w-full">
-                    <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[20px] text-[18px] text-[#191e3b]">
+                    <h2 className="font-['CentraNo2',sans-serif] font-medium leading-[28px] text-[24px] tracking-[-0.025em] text-[#191e3b]">
                       Remaining results
                     </h2>
-                    <p className="font-['CentraNo2',sans-serif] leading-[18px] text-[14px] text-[#676a7d]">
-                      Highly relevant matches based on your
-                      preferences.
-                    </p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] w-full">
                     {remainingMatches.map((property, index) => {

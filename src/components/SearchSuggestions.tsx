@@ -11,7 +11,7 @@ interface Suggestion {
 interface SearchSuggestionsProps {
   query: string;
   onSelect: (value: string) => void;
-  variant?: 'default' | 'hawaii';
+  variant?: 'default' | 'hawaii' | 'maui-only';
 }
 
 export function SearchSuggestions({ query, onSelect, variant = 'default' }: SearchSuggestionsProps) {
@@ -19,6 +19,18 @@ export function SearchSuggestions({ query, onSelect, variant = 'default' }: Sear
     <div className="absolute content-stretch flex flex-col items-start left-[0px] top-[67px] w-full">
       {(() => {
         const getSmartSuggestions = () => {
+          // Maui-only variant: Always show hardcoded Maui destinations
+          if (variant === 'maui-only') {
+            return [
+              { text: 'Maui, Hawaii', type: 'location' as const },
+              { text: 'Lahaina, Maui', type: 'location' as const },
+              { text: 'Wailea, Maui', type: 'location' as const },
+              { text: 'Kaanapali Beach, Maui', type: 'location' as const },
+              { text: 'Paia, Maui', type: 'location' as const },
+              { text: 'Kihei, Maui', type: 'location' as const },
+            ];
+          }
+          
           if (!query) {
              if (variant === 'hawaii') {
                return [

@@ -8,6 +8,19 @@ import Slider from "react-slick";
 import { PropertyCard } from "./components/PropertyCard";
 import { Property, DBProperty } from "./data/properties";
 import { projectId, publicAnonKey } from "./utils/supabase/info";
+import { Button } from "./components/ui/button";
+import { Input } from "./components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
+
+const PASSWORD_GATE_SESSION_KEY = "password_gate_unlocked";
+const REQUIRED_PASSWORD = "sunandfun";
 
 // Custom Arrow Icons
 function ArrowRight() {
@@ -28,7 +41,7 @@ function ArrowLeft() {
 
 // Arrow components for the slider
 function NextArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
     <div
       className="absolute top-1/2 -right-4 md:-right-6 -translate-y-1/2 z-10 cursor-pointer w-10 h-10 bg-white shadow-md rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -40,7 +53,7 @@ function NextArrow(props: any) {
 }
 
 function PrevArrow(props: any) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   // slick passes 'slick-disabled' in className if at start
   if (className.includes("slick-disabled")) return null;
 
@@ -54,7 +67,63 @@ function PrevArrow(props: any) {
   );
 }
 
-export default function App() {
+function PasswordGate({ onUnlocked }: { onUnlocked: () => void }) {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  function submit() {
+    if (password.trim() !== REQUIRED_PASSWORD) {
+      setError("Incorrect password.");
+      return;
+    }
+
+    sessionStorage.setItem(PASSWORD_GATE_SESSION_KEY, "1");
+    onUnlocked();
+  }
+
+  return (
+    <div className="min-h-screen w-full bg-white flex items-center justify-center px-4">
+      <Card className="w-full max-w-[488px]">
+        <CardHeader>
+          <CardTitle>Enter password</CardTitle>
+          <CardDescription>
+            This experience is protected. Please enter the password to continue.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="space-y-1.5">
+            <label htmlFor="password">Password</label>
+            <Input
+              id="password"
+              type="password"
+              autoFocus
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError(null);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") submit();
+              }}
+              aria-invalid={error ? true : undefined}
+              placeholder="••••••••"
+            />
+            {error ? (
+              <p className="text-sm text-[color:var(--destructive)]">{error}</p>
+            ) : null}
+          </div>
+        </CardContent>
+        <CardFooter className="justify-end">
+          <Button onClick={submit} disabled={!password.trim()}>
+            Continue
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+}
+
+function AuthedApp() {
   const [showResults, setShowResults] = useState(false);
   const [searchData, setSearchData] = useState<any>(null);
   const [properties, setProperties] = useState<Property[]>([]);
@@ -176,13 +245,6 @@ export default function App() {
       }
     ]
   };
-
-  // Filter properties for "Amazing Pools" using real data
-  const amazingPools = properties.filter(p => 
-    p.amenities.some(a => a.toLowerCase().includes("pool")) || 
-    p.title.toLowerCase().includes("pool") ||
-    p.highlight.toLowerCase().includes("pool")
-  ).slice(0, 8);
 
   // Filter properties for "Oceanfront Luxury" using real data
   const oceanfrontLuxury = properties.filter(p => 
@@ -314,4 +376,20 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+export default function App() {
+  const [isUnlocked, setIsUnlocked] = useState(() => {
+    try {
+      return sessionStorage.getItem(PASSWORD_GATE_SESSION_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+
+  if (!isUnlocked) {
+    return <PasswordGate onUnlocked={() => setIsUnlocked(true)} />;
+  }
+
+  return <AuthedApp />;
 }

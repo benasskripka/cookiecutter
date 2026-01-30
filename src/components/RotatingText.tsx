@@ -23,14 +23,14 @@ export function RotatingText({ values, currentIndex }: RotatingTextProps) {
         return (
           <p
             key={index}
-            className={`absolute font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic text-[14px] text-[rgba(0,0,0,0.75)] text-left text-nowrap whitespace-pre left-0 transition-all duration-500 ease-out ${
+            className={`absolute font-['CentraNo2',sans-serif] font-medium leading-[18px] not-italic text-[14px] text-[rgba(0,0,0,0.5)] text-left text-nowrap whitespace-pre left-0 transition-all duration-500 ease-out ${
               isVisible ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
               transform: `translateY(${offset * 30}px)`,
             }}
           >
-            "{value}"
+            {value}
           </p>
         );
       })}

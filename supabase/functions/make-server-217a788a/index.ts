@@ -214,28 +214,34 @@ app.post("/make-server-217a788a/generate-description", async (c) => {
       messages: [
         {
           role: "system",
-          content: `You are a warm, knowledgeable local guide helping travelers find their perfect Maui stay.
-          
-          TASK:
-          Write a personalized, conversational sentence (up to 35 words) explaining why these top picks are perfect for this specific search.
-          
-          INPUT DATA:
-          - User Search Query: "${query}"
-          - Properties: List of titles, types, unique highlights, and top amenities.
-          
-          GUIDELINES:
-          - Speak directly to the traveler using "you" and "your" — make it feel like a personal recommendation.
-          - Highlight what makes these picks special based on their actual highlights and amenities.
-          - Reference specifics from the data: stunning views, unique features, prime locations, standout amenities.
-          - Match the tone to the search intent (romantic = dreamy language, family = practical + fun, luxury = refined).
-          - Avoid generic phrases like "great locations" — be specific and evocative.
-          - Do NOT mention specific property names.
-          - Return ONLY the sentence, no quotes.
-          
-          EXAMPLES:
-          - "These oceanfront gems put you steps from the sand with private pools and sunset lanais—exactly what your romantic getaway deserves."
-          - "Your family will love these spacious retreats with pools, game rooms, and beaches within walking distance for endless island adventures."
-          - "For the luxury you're seeking, these villas deliver with infinity pools, chef's kitchens, and panoramic ocean views from every room."`
+          content: `You write the "About your results" blurb for a vacation rental search.
+
+GOAL:
+Give a quick, grounded “state of play” overview of the results — NOT destination poetry.
+
+OUTPUT:
+1–2 short sentences, max 45 words total.
+
+INPUT:
+- User Search Query: "${query}"
+- Properties: titles, types, highlights, and up to 5 amenities per property.
+
+MUST INCLUDE (in this order):
+1) A brief “past preferences” line (imaginary but plausible) that fits the query (e.g., “you usually go for private pools, chef’s kitchens, and space”).
+2) How we blended those preferences with the query intents (name 2–3 intents from the query).
+3) What kind of results they’re seeing right now, grounded in the provided properties (types + shared themes from highlights/amenities).
+
+RULES:
+- Only mention features you can support from highlights/amenities/types provided.
+- Do NOT mention property names.
+- Mention availability carefully (e.g., “options that are still open around your dates”), without guaranteeing availability.
+- Return ONLY the text (no quotes, no bullets).
+
+TONE:
+Clear, specific, lightly conversational; avoid fluff like “exquisite” / “serene” / “elegant escape”.
+
+STYLE EXAMPLE (don’t copy verbatim):
+"You usually lean toward privacy and high-end comforts, so we blended that with your search for beachfront luxury and surfaced mostly villas with private pools, ocean-view highlights, and full kitchens—plus options that still look open around your dates."`
         },
         {
           role: "user",
@@ -251,105 +257,6 @@ app.post("/make-server-217a788a/generate-description", async (c) => {
     console.error("Error generating description:", error);
     // Return null so frontend keeps the default or deterministic fallback
     return c.json({ description: null });
-  }
-});
-
-// Generate Description Endpoint
-app.post("/make-server-217a788a/generate-description", async (c) => {
-  try {
-    const { query, properties } = await c.req.json();
-    
-    if (!properties || properties.length === 0) {
-      return c.json({ description: "" });
-    }
-
-    // Extract relevant data for the AI: Title, Highlight, and Top Amenities
-    const propertyContext = properties.map((p: any) => 
-      `- ${p.title}: "${p.highlight}" (Amenities: ${p.amenities ? p.amenities.slice(0, 5).join(', ') : ''})`
-    ).join("\n");
-
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        {
-          role: "system",
-          content: `You are a helpful assistant for a vacation rental app. 
-          Generate a single, natural sentence (max 25 words) summarizing the collective appeal of these top 4 properties for the user's search "${query}".
-          
-          Guidelines:
-          - Use the provided highlights and amenities (tags) to identify common themes (e.g., "ocean views", "luxury pools", "walking distance to beach").
-          - Do not mention specific property names.
-          - The tone should be inviting and professional.
-          - Example: "The highlighted Maui rentals stand out for stunning ocean views, spacious lanais, and easy beach access."
-          
-          Return ONLY the sentence.`
-        },
-        {
-          role: "user",
-          content: `Properties:\n${propertyContext}`
-        }
-      ]
-    });
-
-    const description = completion.choices[0].message.content?.trim() || 
-      "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts.";
-      
-    return c.json({ description });
-
-  } catch (error) {
-    console.error("Error generating description:", error);
-    return c.json({ description: "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts." });
-  }
-});
-
-// Generate Description Endpoint
-app.post("/make-server-217a788a/generate-description", async (c) => {
-  try {
-    const { query, properties } = await c.req.json();
-    
-    if (!properties || properties.length === 0) {
-      return c.json({ description: "" });
-    }
-
-    // Extract relevant details for the AI, focusing on highlights and amenities
-    const context = properties.map((p: any) => {
-      const amenities = p.amenities ? p.amenities.slice(0, 5).join(", ") : "";
-      return `- ${p.title}: ${p.highlight || ""} (Amenities: ${amenities})`;
-    }).join("\n");
-
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        {
-          role: "system",
-          content: `You are a helpful assistant for a Maui vacation rental app.
-          
-          Task: Generate a single, inviting sentence (max 25 words) summarizing the common appeal of these specific properties.
-          
-          Guidelines:
-          - Start with "The highlighted Maui rentals stand out for..." or similar natural phrasing.
-          - Focus on the shared features, locations, or vibe based on the provided highlights and amenities.
-          - Do not list specific property names.
-          - Keep it punchy and elegant.`
-        },
-        {
-          role: "user",
-          content: `User Search Query: "${query}"
-          
-          Top Properties Found:
-          ${context}`
-        }
-      ]
-    });
-
-    const description = completion.choices[0].message.content?.trim() || 
-      "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts.";
-      
-    return c.json({ description });
-
-  } catch (error) {
-    console.error("Error generating description:", error);
-    return c.json({ description: "The highlighted Maui rentals stand out for great locations, authentic island charm, and easy comforts." });
   }
 });
 
