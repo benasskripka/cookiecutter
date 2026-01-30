@@ -12,9 +12,10 @@ interface SearchSuggestionsProps {
   query: string;
   onSelect: (value: string) => void;
   variant?: 'default' | 'hawaii' | 'maui-only';
+  hasDates?: boolean;
 }
 
-export function SearchSuggestions({ query, onSelect, variant = 'default' }: SearchSuggestionsProps) {
+export function SearchSuggestions({ query, onSelect, variant = 'default', hasDates = false }: SearchSuggestionsProps) {
   return (
     <div className="absolute content-stretch flex flex-col items-start left-[0px] top-[67px] w-full">
       {(() => {
@@ -109,11 +110,18 @@ export function SearchSuggestions({ query, onSelect, variant = 'default' }: Sear
 
           // --- LOGIC ---
 
-          // 1. Special "Next Month" Action
-          if (q.includes('next month')) {
+          // 1. Special "Next Month" Action - only show if dates aren't already set
+          if (q.includes('next month') && !hasDates) {
              results.push({ text: 'Set dates', type: 'action' });
              results.push({ text: 'Flexible in February', type: 'sub-option' });
              results.push({ text: '1 Feb - 28 Feb', type: 'sub-option' });
+          }
+
+          // 1b. Special "Next Week" Action - only show if dates aren't already set
+          if (q.includes('next week') && !hasDates) {
+             results.push({ text: 'Set dates', type: 'action' });
+             results.push({ text: 'Flexible next week', type: 'sub-option' });
+             results.push({ text: '2 Feb - 8 Feb', type: 'sub-option' });
           }
 
           // 2. Location Matching (Highest Priority)
@@ -329,8 +337,7 @@ export function SearchSuggestions({ query, onSelect, variant = 'default' }: Sear
                     <svg className="block size-full" fill="none" viewBox="0 0 20 20">
                       {suggestion.type === 'action' ? (
                         <g>
-                          <path d={svgPathsNew.p2fb86b00} fill="#0F51ED" />
-                          <path d={svgPathsNew.p187b9700} fill="#0F51ED" />
+                          <path d={svgPaths.p31076400} fill="#0F51ED" />
                         </g>
                       ) : suggestion.type === 'sub-option' ? (
                         <g>

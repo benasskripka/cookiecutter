@@ -97,19 +97,25 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   const handleSuggestionSelect = (value: string) => {
     // Special handling for "next month" actions
     if (value === 'Set dates') {
-      const cleanLocation = locationValue.replace(/next month/gi, '').trim();
-      setLocationValue(cleanLocation);
       setActiveInput('calendar');
       return;
     }
 
     if (value === 'Flexible in February' || value === '1 Feb - 28 Feb') {
-      const cleanLocation = locationValue.replace(/next month/gi, '').trim();
-      setLocationValue(cleanLocation);
-      
       // Set to February 2026
       setStartDate(new Date(2026, 1, 1));
       setEndDate(new Date(2026, 1, 28));
+      
+      // Keep focus state active but just update data
+      setHasUserSelection(true);
+      return;
+    }
+
+    // Special handling for "next week" actions
+    if (value === 'Flexible next week' || value === '2 Feb - 8 Feb') {
+      // Set to next week: Feb 2 - Feb 8, 2026
+      setStartDate(new Date(2026, 1, 2));
+      setEndDate(new Date(2026, 1, 8));
       
       // Keep focus state active but just update data
       setHasUserSelection(true);
@@ -197,6 +203,26 @@ export function SearchBar({ onSearch }: SearchBarProps) {
             isActive={activeInput === 'location'}
             onClick={() => handleInputClick('location')}
             onChange={(val) => {
+              const lowerVal = val.toLowerCase();
+              
+              // Auto-select specific dates when user types space after "next month"
+              if (lowerVal.includes('next month ')) {
+                setLocationValue(val);
+                setStartDate(new Date(2026, 1, 1));  // Feb 1
+                setEndDate(new Date(2026, 1, 28));   // Feb 28
+                setHasUserSelection(true);
+                return;
+              }
+              
+              // Auto-select specific dates when user types space after "next week"
+              if (lowerVal.includes('next week ')) {
+                setLocationValue(val);
+                setStartDate(new Date(2026, 1, 2));  // Feb 2
+                setEndDate(new Date(2026, 1, 8));    // Feb 8
+                setHasUserSelection(true);
+                return;
+              }
+              
               setLocationValue(val);
               setHasUserSelection(val.length > 0);
             }}
@@ -243,7 +269,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
 
       {/* Search suggestions dropdown */}
       {activeInput === 'location' && (
-        <SearchSuggestions query={locationValue} onSelect={handleSuggestionSelect} />
+        <SearchSuggestions query={locationValue} onSelect={handleSuggestionSelect} hasDates={!!startDate} />
       )}
       
       {/* Calendar View */}

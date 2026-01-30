@@ -66,15 +66,25 @@ export function SearchInput({
           >
             {(() => {
               const text = value || '';
-              const highlightPhrase = 'next month';
+              const highlightPhrases = ['next month', 'next week'];
               const lowerText = text.toLowerCase();
-              const index = lowerText.indexOf(highlightPhrase);
               
-              if (index === -1) return <span className="text-black">{text}</span>;
+              // Find the first matching phrase
+              let matchedPhrase: string | null = null;
+              let index = -1;
+              for (const phrase of highlightPhrases) {
+                const idx = lowerText.indexOf(phrase);
+                if (idx !== -1 && (index === -1 || idx < index)) {
+                  index = idx;
+                  matchedPhrase = phrase;
+                }
+              }
+              
+              if (index === -1 || !matchedPhrase) return <span className="text-black">{text}</span>;
               
               const before = text.slice(0, index);
-              const match = text.slice(index, index + highlightPhrase.length);
-              const after = text.slice(index + highlightPhrase.length);
+              const match = text.slice(index, index + matchedPhrase.length);
+              const after = text.slice(index + matchedPhrase.length);
               
               return (
                 <>
