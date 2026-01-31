@@ -635,7 +635,7 @@ function UnifiedHeader({
                   {/* Suggestion Chips Row */}
                   <div className="flex gap-[16px] items-center overflow-x-auto px-[24px] pt-[16px]">
                     {[
-                      { icon: 'plus', text: 'Mountain view', action: 'filter' },
+                      { icon: 'plus', text: 'Beach view', action: 'filter' },
                       { icon: 'plus', text: 'Family friendly', action: 'filter' },
                       { icon: 'location', text: "Add Wai'ānapanapa State Park", action: 'poi', location: "Wai'ānapanapa State Park" },
                       { icon: 'question', text: 'Best beach for a family?', action: 'filter' },
@@ -682,23 +682,28 @@ function UnifiedHeader({
                     ))}
                   </div>
                   
-                  {/* History Row */}
-                  <div className="flex items-center gap-[16px] px-[24px]" style={{ marginTop: '24px' }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                      <path d="M12 4C9.47361 4 7.22072 5.17109 5.75461 7.00002H8.64644C8.95769 7.00002 9.11136 7.38867 8.89645 7.60358L7.64645 8.85358C7.55268 8.94734 7.4255 9.00002 7.29289 9.00002H3C2.44772 9.00002 2 8.55231 2 8.00002V3.70714C2 3.57452 2.05268 3.44735 2.14645 3.35358L3.39645 2.10358C3.61136 1.88867 4 2.04234 4 2.35358V5.99902C5.82447 3.57068 8.72879 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C7.00362 22 2.86307 18.3358 2.11907 13.5479C2.07367 13.2558 2.30582 13 2.60147 13H3.62037C3.87259 13 4.08365 13.1885 4.12864 13.4366C4.80546 17.1694 8.07216 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="#191e3b"/>
-                      <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V8Z" fill="#191e3b"/>
-                    </svg>
-                    <button
-                      onClick={() => {
-                        const historyQuery = "Santa Fe traditional homes with pool";
-                        onAddFilters(historyQuery);
-                        setActivePopup(null);
-                      }}
-                      className="font-['CentraNo2',sans-serif] font-medium text-[14px] text-[#191e3b] leading-[1.25] hover:underline transition-colors"
-                    >
-                      Santa Fe traditional homes with pool
-                    </button>
-                  </div>
+                  {/* History Row (shows the user's last/original query; clicking fills the input) */}
+                  {!!_query?.trim() && (
+                    <div className="flex items-center gap-[16px] px-[24px]" style={{ marginTop: '24px' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                        <path d="M12 4C9.47361 4 7.22072 5.17109 5.75461 7.00002H8.64644C8.95769 7.00002 9.11136 7.38867 8.89645 7.60358L7.64645 8.85358C7.55268 8.94734 7.4255 9.00002 7.29289 9.00002H3C2.44772 9.00002 2 8.55231 2 8.00002V3.70714C2 3.57452 2.05268 3.44735 2.14645 3.35358L3.39645 2.10358C3.61136 1.88867 4 2.04234 4 2.35358V5.99902C5.82447 3.57068 8.72879 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C7.00362 22 2.86307 18.3358 2.11907 13.5479C2.07367 13.2558 2.30582 13 2.60147 13H3.62037C3.87259 13 4.08365 13.1885 4.12864 13.4366C4.80546 17.1694 8.07216 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" fill="#191e3b"/>
+                        <path d="M13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8V12C11 12.2652 11.1054 12.5196 11.2929 12.7071L14.2929 15.7071C14.6834 16.0976 15.3166 16.0976 15.7071 15.7071C16.0976 15.3166 16.0976 14.6834 15.7071 14.2929L13 11.5858V8Z" fill="#191e3b"/>
+                      </svg>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          const historyQuery = _query.trim();
+                          setSearchInput(historyQuery);
+                          setActivePopup('destination');
+                          // Ensure input is ready/focused for editing
+                          requestAnimationFrame(() => inputRef.current?.focus());
+                        }}
+                        className="font-['CentraNo2',sans-serif] font-medium text-[14px] text-[#191e3b] leading-[1.25] hover:underline transition-colors text-left"
+                      >
+                        {_query.trim()}
+                      </button>
+                    </div>
+                  )}
                 </>
               )}
             </div>
