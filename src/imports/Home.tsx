@@ -148,7 +148,7 @@ function Frame1() {
       <div className="h-[459px] overflow-clip relative rounded-[inherit] w-[1723px]">
         <Frame3 />
         <Frame2 />
-        <p className="[text-shadow:#000000_0px_0px_25px] absolute font-['Lardent_Pro_Slab:Regular',sans-serif] leading-[normal] left-[calc(50%-202.5px)] not-italic text-[36px] text-nowrap text-white top-[164px] tracking-[-0.36px] whitespace-pre">Entire place, just for you.</p>
+        <p className="[text-shadow:#000000_0px_0px_25px] absolute font-['Lardent_Pro_Slab:Regular',sans-serif] leading-[normal] left-[calc(50%-202.5px)] not-italic text-[36px] text-nowrap text-white top-[164px] tracking-[-0.36px] whitespace-pre">Entire place, just for you</p>
       </div>
       <div aria-hidden="true" className="absolute border border-[rgba(0,0,0,0.1)] border-solid inset-0 pointer-events-none" />
     </div>
