@@ -280,7 +280,7 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
 
         <FilterSection title="Property type">
           <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-             {['House', 'Condo', 'Villa', 'Cottage', 'Studio', 'Resort'].map(type => (
+             {['House', 'Condo', 'Villa', 'Cottage', 'Studio', 'Resort', 'Apartment', 'Townhouse', 'Bungalow', 'Estate', 'Cabin', 'Loft'].map(type => (
                 <label key={type} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); togglePropertyType(type); }}>
                    <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.propertyTypes.includes(type) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                       {filters.propertyTypes.includes(type) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
@@ -293,7 +293,12 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
 
          <FilterSection title="Amenities">
             <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-              {['Wifi', 'Kitchen', 'Washer', 'Dryer', 'Air conditioning', 'Heating', 'Pool', 'Hot tub', 'Patio', 'BBQ grill'].map(item => (
+              {[
+                'Wifi', 'Kitchen', 'Washer', 'Dryer', 'Air conditioning', 'Heating', 
+                'Pool', 'Hot tub', 'Patio', 'BBQ grill', 'Beach access', 'Ocean view',
+                'Parking', 'Gym', 'Fireplace', 'Balcony', 'Garden', 'Pet friendly',
+                'EV charger', 'Concierge', 'Room service', 'Spa'
+              ].map(item => (
                  <label key={item} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleAmenity(item); }}>
                     <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.amenities.includes(item) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                        {filters.amenities.includes(item) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
@@ -323,8 +328,12 @@ function FiltersView({ filters, onFilterChange }: { filters: FilterState, onFilt
          </FilterSection>
 
          <FilterSection title="Accessibility">
-            <div className="space-y-4">
-              {['Step-free guest entrance', 'Step-free path to guest entrance', 'Wide doorway'].map(item => (
+            <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+              {[
+                'Step-free guest entrance', 'Step-free path to guest entrance', 'Wide doorway',
+                'Accessible bathroom', 'Roll-in shower', 'Grab bars', 'Elevator access',
+                'Ground floor', 'Wide hallways', 'Pool lift'
+              ].map(item => (
                  <label key={item} className="flex items-center gap-3 cursor-pointer group" onClick={(e) => { e.preventDefault(); toggleAccessibility(item); }}>
                     <div className={`w-[20px] h-[20px] border rounded-[4px] flex items-center justify-center relative transition-colors ${filters.accessibility.includes(item) ? 'bg-black border-black' : 'border-[#D1D5DC] group-hover:border-black'}`}>
                        {filters.accessibility.includes(item) && <div className="w-2 h-2 bg-white rounded-[1px]" />}
@@ -998,7 +1007,7 @@ function Frame({ properties, allProperties, pois }: { properties: Property[], al
   );
 }
 
-function Content18({ query, pois, filters, isParsing = false, onResetFilters }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean, onResetFilters?: () => void }) {
+function Content18({ query, pois, filters: _filters, isParsing = false, onResetFilters }: { query?: string, pois?: POI[], filters?: FilterState, isParsing?: boolean, onResetFilters?: () => void }) {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(16);
@@ -1136,61 +1145,9 @@ function Content18({ query, pois, filters, isParsing = false, onResetFilters }: 
     }
   }, [query, isParsing]);
 
-  // Apply Client Side Filtering
-  const filteredProperties = properties.filter(p => {
-    if (!filters) return true;
-    
-    // Price
-    if (filters.priceRange.min > 0 && p.price < filters.priceRange.min) return false;
-    if (filters.priceRange.max < 10000 && p.price > filters.priceRange.max) return false;
-
-    // Rooms
-    if (filters.bedrooms > 0 && p.bedrooms < filters.bedrooms) return false;
-    if (filters.beds > 0 && p.beds < filters.beds) return false;
-    if (filters.bathrooms > 0 && p.bathrooms < filters.bathrooms) return false;
-
-    // Type
-    if (filters.propertyTypes.length > 0 && !filters.propertyTypes.includes(p.type)) return false;
-
-    // Rating (out of 10)
-    if (filters.rating !== null && p.rating < filters.rating) return false;
-
-    // Amenities (Robust concept mapping)
-    if (filters.amenities.length > 0) {
-      const propertyAmenities = p.amenities.map(a => a.toLowerCase().replace(/[\s_-]/g, ''));
-      
-      // Map UI filters to potential tag keywords
-      const amenityMappings: Record<string, string[]> = {
-         'wifi': ['wifi', 'internet', 'wi-fi'],
-         'kitchen': ['kitchen', 'fullkitchen', 'chefkitchen'],
-         'washer': ['washer', 'laundry', 'washingmachine', 'washerdryer'],
-         'dryer': ['dryer', 'laundry', 'tumbledryer', 'washerdryer'],
-         'airconditioning': ['ac', 'airconditioning', 'a/c', 'aircon', 'climatecontrol'],
-         'heating': ['heating', 'heater', 'fireplace'],
-         'pool': ['pool', 'swimmingpool', 'privatepool', 'sharedpool'],
-         'hottub': ['hottub', 'jacuzzi', 'spa', 'whirlpool'],
-         'patio': ['patio', 'balcony', 'terrace', 'deck', 'lanai', 'veranda', 'porch'],
-         'bbqgrill': ['bbq', 'barbecue', 'grill', 'bbqgrill']
-      };
-
-      const hasAllAmenities = filters.amenities.every(filterAmenity => {
-         const normalizedFilter = filterAmenity.toLowerCase().replace(/[\s_-]/g, '');
-         const keywords = amenityMappings[normalizedFilter] || [normalizedFilter];
-         
-         // Check if ANY of the keywords for this filter exist in the property's amenities
-         return keywords.some(keyword => 
-            propertyAmenities.some(propAmenity => propAmenity.includes(keyword))
-         );
-      });
-
-      if (!hasAllAmenities) return false;
-    }
-    
-    // Accessibility
-    // Not implemented in DB schema yet, so we skip filtering for now or assume properties don't have this data
-    
-    return true;
-  });
+  // Client-side filtering disabled - backend handles filtering via query parsing
+  // Filter chips are still displayed from the filters state, but don't affect results
+  const filteredProperties = properties;
 
   const visibleProperties = filteredProperties.slice(0, visibleCount);
   const hasMore = filteredProperties.length > visibleCount;

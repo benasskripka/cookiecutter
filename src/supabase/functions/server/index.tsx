@@ -39,14 +39,18 @@ const propertyTypeMap: Record<string, string[]> = {
   "condo": ["condo", "apartment", "loft", "resort"],
   "house": ["house", "home", "cottage", "bungalow"],
   "studio": ["studio"],
-  "townhouse": ["townhouse", "townhome"]
+  "townhouse": ["townhouse", "townhome"],
+  "cabin": ["cabin", "lodge", "chalet"],
+  "estate": ["estate", "manor", "mansion"],
+  "bungalow": ["bungalow", "cottage"],
+  "loft": ["loft", "penthouse"]
 };
 
 // Concept mapping for "relational" search (Amenities & Features)
 const conceptMap: Record<string, string[]> = {
   "pool": ["pool", "swimming", "private pool", "plunge pool", "infinity pool"],
   "hot tub": ["hot tub", "jacuzzi", "spa", "whirlpool"],
-  "beach": ["beach", "ocean", "sea", "waterfront", "coast", "shore", "beachfront"],
+  "beach": ["beach", "ocean", "sea", "waterfront", "coast", "shore", "beachfront", "beach access"],
   "view": ["view", "scenic", "panorama", "vista", "mountain view", "ocean view"],
   "wifi": ["wifi", "internet", "broadband", "high speed"],
   "parking": ["parking", "garage", "carport", "driveway"],
@@ -60,7 +64,14 @@ const conceptMap: Record<string, string[]> = {
   "hiking": ["hiking", "trail", "nature", "walk"],
   "golf": ["golf", "course", "club", "fairway"],
   "tennis": ["tennis", "court", "sport"],
-  "gym": ["gym", "fitness", "workout", "exercise"]
+  "gym": ["gym", "fitness", "workout", "exercise"],
+  "fireplace": ["fireplace", "fire pit", "wood burning", "hearth"],
+  "balcony": ["balcony", "terrace", "deck", "lanai", "veranda", "patio"],
+  "garden": ["garden", "yard", "lawn", "outdoor space", "landscaping"],
+  "ev": ["ev charger", "electric vehicle", "charging station", "tesla"],
+  "concierge": ["concierge", "butler", "personal service"],
+  "room service": ["room service", "in-room dining"],
+  "spa": ["spa", "massage", "wellness", "sauna", "steam room"]
 };
 
 // Helper to parse query into structured requirements
@@ -119,8 +130,10 @@ app.post("/make-server-217a788a/chat", chatHandler);
 
 // Parse Search Endpoint
 app.post("/make-server-217a788a/parse-search", async (c) => {
+  let query = "";
   try {
-    const { query } = await c.req.json();
+    const body = await c.req.json();
+    query = body?.query ?? "";
     
     if (!query) {
       return c.json({ error: "Query required" }, 400);
@@ -135,8 +148,8 @@ app.post("/make-server-217a788a/parse-search", async (c) => {
           Analyze the user's search query and extract structured filters and remaining keywords.
           
           Available Filters:
-          - propertyTypes: "House", "Condo", "Villa", "Cottage", "Studio", "Resort"
-          - amenities: "Wifi", "Kitchen", "Washer", "Dryer", "Air conditioning", "Heating", "Pool", "Hot tub", "Patio", "BBQ grill"
+          - propertyTypes: "House", "Condo", "Villa", "Cottage", "Studio", "Resort", "Apartment", "Townhouse", "Bungalow", "Estate", "Cabin", "Loft"
+          - amenities: "Wifi", "Kitchen", "Washer", "Dryer", "Air conditioning", "Heating", "Pool", "Hot tub", "Patio", "BBQ grill", "Beach access", "Ocean view", "Parking", "Gym", "Fireplace", "Balcony", "Garden", "Pet friendly", "EV charger", "Concierge", "Room service", "Spa"
           - priceRange: min and max (default 0 and 10000)
           - bedrooms: number (default 0)
           - beds: number (default 0)
@@ -187,7 +200,7 @@ app.post("/make-server-217a788a/parse-search", async (c) => {
         propertyTypes: [],
         amenities: []
       },
-      concepts: [query]
+      concepts: query ? [query] : []
     });
   }
 });
