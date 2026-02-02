@@ -13,15 +13,112 @@ function IconGlyphFavoriteBorder() {
   );
 }
 
-export function PropertyCard({ property, index, className, showDescription }: { property: Property; index: number; className?: string; showDescription?: boolean }) {
+export function PropertyCard({ property, index: _index, className, showDescription, horizontal = false }: { property: Property; index: number; className?: string; showDescription?: boolean; horizontal?: boolean }) {
   const highlightTags = property.highlight
     ? property.highlight.split(";").map((tag) => tag.trim()).filter(Boolean)
     : [];
 
+  if (horizontal) {
+    // Horizontal layout: image on left, content on right
+    return (
+      <div className={`flex overflow-clip relative bg-white rounded-[24px] shadow-lg ${className || ""}`} style={{ width: 420 }}>
+        {/* Image section - left side */}
+        <div className="w-[160px] h-[180px] flex-shrink-0 relative overflow-clip rounded-l-[24px]">
+          <img
+            alt={property.title}
+            className="absolute inset-0 max-w-none object-center object-cover pointer-events-none size-full"
+            src={property.images[0]}
+            onError={(e) => {
+              e.currentTarget.src = "https://images.unsplash.com/photo-1615044841895-9c576f5b5400?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+            }}
+          />
+          {/* Badge */}
+          {property.badge && (
+            <div className="absolute top-[12px] left-[12px]">
+              <div className="flex items-start justify-start relative shrink-0">
+                <div className="bg-[#191e3b] content-stretch flex items-start overflow-clip px-[12px] py-[6px] relative rounded-[8px] shrink-0">
+                  <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-white">
+                    {property.badge}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+        
+        {/* Content section - right side */}
+        <div className="flex-1 flex flex-col justify-between min-w-0 bg-white">
+          <div className="box-border content-stretch flex flex-col gap-[8px] items-start px-[16px] py-[16px] relative w-full">
+            <div className="flex items-start justify-between w-full gap-[8px]">
+              <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative text-[#191e3b] text-[16px] flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+                {property.title}
+              </p>
+              <div className="content-stretch flex gap-[6px] items-center relative shrink-0">
+                <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
+                  ({property.reviews})
+                </p>
+                <div className="box-border content-stretch flex items-center overflow-clip px-[6px] py-[2px] relative rounded-[4px] shrink-0" style={{ backgroundColor: '#D1FAE1' }}>
+                  <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-nowrap whitespace-pre" style={{ color: '#191E3B', padding: '0 6px' }}>
+                    {property.rating}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[4px] items-start relative shrink-0 w-full">
+              <p className="font-['CentraNo2',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#191e3b] text-[14px] text-nowrap whitespace-pre">
+                {property.type} · {property.bedrooms} bed · {property.beds} beds
+              </p>
+            </div>
+            {highlightTags.length > 0 && (
+              <div className="content-stretch flex gap-[10px] items-start justify-end relative shrink-0 w-full">
+                <div className="content-start flex flex-[1_0_0] flex-wrap gap-[8px] items-start min-h-px min-w-px overflow-clip relative">
+                  {highlightTags.slice(0, 2).map((tag, tagIndex) => (
+                    <div key={`${tag}-${tagIndex}`} className="content-stretch flex items-center px-[12px] py-[6px] relative rounded-[8px] shrink-0" style={{ backgroundColor: '#F8F6F2' }}>
+                      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px]" style={{ color: '#191E3B' }}>
+                        {tag}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="content-stretch flex flex-col gap-[2px] items-start relative shrink-0 w-full">
+              <div className="content-stretch flex gap-[8px] items-center justify-start relative shrink-0 w-full">
+                <div className="content-stretch flex flex-col gap-[2px] items-start justify-start relative shrink-0">
+                  {property.discount && (
+                    <div className="bg-[#e5f5ed] box-border content-stretch flex items-center overflow-clip px-[8px] py-[2px] relative rounded-[4px] shrink-0">
+                      <p className="font-['CentraNo2',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#00754a] text-[12px] text-nowrap whitespace-pre">
+                        {property.discount}
+                      </p>
+                    </div>
+                  )}
+                  <div className="content-stretch flex gap-[4px] items-baseline relative shrink-0">
+                    {property.originalPrice && (
+                      <p className="font-['CentraNo2',sans-serif] leading-[18px] line-through not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap whitespace-pre">
+                        {property.originalPrice}
+                      </p>
+                    )}
+                    <p className="font-['CentraNo2',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#191e3b] text-[18px] text-nowrap whitespace-pre">
+                      ${property.price}
+                    </p>
+                    <p className="font-['CentraNo2',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#676a7d] text-[14px] text-nowrap text-left whitespace-pre">
+                      · {property.totalPrice} total
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default vertical layout
   return (
     <div className={`basis-0 content-stretch flex flex-col grow min-h-px min-w-px overflow-clip relative shrink-0 ${className || ""}`}>
       <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-        <div className="aspect-[1.83/1] overflow-clip relative w-full rounded-[24px]">
+        <div className="aspect-[1.57/1] overflow-clip relative w-full rounded-[24px]">
           <div className="relative size-full rounded-[24px] overflow-clip">
             <img
               alt={property.title}
@@ -63,7 +160,7 @@ export function PropertyCard({ property, index, className, showDescription }: { 
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}
               />
               <div className="absolute content-stretch flex items-center justify-center left-1/2 top-0 translate-x-[-50%] h-full gap-[0px]">
-                {[0, 1, 2, 3, 4].map((dot, i) => (
+                {[0, 1, 2, 3, 4].map((_dot, i) => (
                   <div key={i} className="h-[24px] w-[12px] flex items-center justify-center">
                     <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 24">
                       <circle

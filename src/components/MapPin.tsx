@@ -10,21 +10,27 @@ function Label({ text }: { text: string }) {
   );
 }
 
-function MapPinContainerLabelLarge({ text }: { text: string }) {
+function MapPinContainerLabelLarge({ text, selected }: { text: string; selected?: boolean }) {
+  const bgColor = selected ? '#191E3B' : '#0f51ed';
   return (
-    <div className="bg-[#0f51ed] content-stretch flex h-[28px] items-center px-[8px] py-0 relative rounded-[40000px] shadow-[0px_0px_0px_0px_rgba(12,14,28,0)] shrink-0 whitespace-nowrap" data-name="_ / ✏️ Map / Pin / Container / Label / Large">
+    <div 
+      className="content-stretch flex h-[28px] items-center px-[8px] py-0 relative rounded-[40000px] shadow-[0px_0px_0px_0px_rgba(12,14,28,0)] shrink-0 whitespace-nowrap transition-colors" 
+      style={{ backgroundColor: bgColor }}
+      data-name="_ / ✏️ Map / Pin / Container / Label / Large"
+    >
       <Label text={text} />
     </div>
   );
 }
 
-function MapPinTail() {
+function MapPinTail({ selected }: { selected?: boolean }) {
+  const fillColor = selected ? '#191E3B' : '#0F51ED';
   return (
     <div className="h-[4px] relative shrink-0 w-[6px]" data-name="_ / Map / Pin / Tail">
       <div className="absolute inset-[-50%_0_0_0]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 6 6">
           <g id="_ / Map / Pin / Tail">
-            <path d="M6 0H0L3.00004 5.1824L6 0Z" fill="var(--fill-0, #0F51ED)" id="Triangle" />
+            <path d="M6 0H0L3.00004 5.1824L6 0Z" fill={fillColor} id="Triangle" />
           </g>
         </svg>
       </div>
@@ -32,11 +38,14 @@ function MapPinTail() {
   );
 }
 
-export default function MapPinProductText({ text }: { text: string }) {
+export default function MapPinProductText({ text, selected, disableHoverScale }: { text: string; selected?: boolean; disableHoverScale?: boolean }) {
   return (
-    <div className="content-stretch flex flex-col items-center relative drop-shadow-md hover:scale-110 transition-transform cursor-pointer" data-name="Map / Pin / Product / Text">
-      <MapPinContainerLabelLarge text={text} />
-      <MapPinTail />
+    <div 
+      className={`content-stretch flex flex-col items-center relative drop-shadow-md transition-transform cursor-pointer ${disableHoverScale ? '' : 'hover:scale-110'}`} 
+      data-name="Map / Pin / Product / Text"
+    >
+      <MapPinContainerLabelLarge text={text} selected={selected} />
+      <MapPinTail selected={selected} />
     </div>
   );
 }

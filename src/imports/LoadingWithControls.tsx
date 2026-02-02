@@ -563,19 +563,22 @@ function UnifiedHeader({
               }`}
               style={{
                 top: activePopup === 'destination' ? '12px' : '24px',
-                width: activePopup === 'destination' ? '956px' : '560px',
+                width: activePopup === 'destination' ? '752px' : '560px',
                 height: activePopup === 'destination' ? '297px' : '51px',
               }}
             >
               {/* Input area inside sheet */}
               <div className={`flex justify-center ${activePopup === 'destination' ? 'pt-[16px] px-[16px]' : 'pt-0 px-0'}`}>
                 <div 
-                  className={`bg-white flex items-center px-[24px] py-[14px] rounded-[32px] transition-all duration-300 ${
+                  className={`bg-white flex items-center rounded-[32px] transition-all duration-300 ${
                     activePopup === 'destination' 
                       ? 'border border-[rgba(0,0,0,0.15)] shadow-[0px_5px_15px_0px_rgba(0,0,0,0.1)]' 
-                      : 'border-0 shadow-none'
+                      : 'border-0 shadow-none py-[14px] px-[24px]'
                   }`}
-                  style={{ width: '560px' }}
+                  style={{ 
+                    width: activePopup === 'destination' ? '720px' : '560px',
+                    ...(activePopup === 'destination' ? { padding: '8px 8px 8px 24px' } : {})
+                  }}
                 >
                   {activePopup === 'destination' ? (
                     <>
@@ -585,10 +588,11 @@ function UnifiedHeader({
                         onChange={(e) => setSearchInput(e.target.value)}
                         onKeyDown={handleSearchSubmit}
                         onClick={(e) => e.stopPropagation()}
-                        className="font-['CentraNo2',sans-serif] font-medium text-[14px] text-[rgba(0,0,0,0.75)] bg-transparent outline-none flex-1 border-none p-0"
+                        className="font-['CentraNo2',sans-serif] font-medium text-[14px] text-[rgba(0,0,0,0.75)] bg-transparent outline-none flex-1 border-none"
+                        style={{ padding: '8px 16px 8px 0', height: 39 }}
                         placeholder="Filter, search or add a place"
                       />
-                      <button 
+                      <div 
                         onClick={(e) => {
                           e.stopPropagation();
                           if (searchInput) {
@@ -597,12 +601,13 @@ function UnifiedHeader({
                             setActivePopup(null);
                           }
                         }}
-                        className="w-[40px] h-[40px] bg-[#1668e3] rounded-full flex items-center justify-center shrink-0 hover:bg-[#1255c4] transition-colors -mr-2"
+                        className="rounded-full flex items-center justify-center cursor-pointer transition-all flex-none hover:opacity-90"
+                        style={{ backgroundColor: '#0F51EC', width: 39, height: 39, minWidth: 39, minHeight: 39 }}
                       >
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                      </button>
+                      </div>
                     </>
                   ) : (
                     <motion.span 
@@ -940,20 +945,20 @@ function StandardButtonSecondaryIconOnly() {
   );
 }
 
-function Map({ properties, pois }: { properties: Property[], pois?: POI[] }) {
+function Map({ properties, allProperties, pois }: { properties: Property[], allProperties?: Property[], pois?: POI[] }) {
   return (
     <div className="h-full w-full min-h-0 overflow-hidden relative" data-name="Map">
-      <RealMap properties={properties} pois={pois} />
+      <RealMap properties={properties} allProperties={allProperties} pois={pois} />
       <StandardButtonSecondaryIconOnly />
     </div>
   );
 }
 
-function Frame({ properties, pois }: { properties: Property[], pois?: POI[] }) {
+function Frame({ properties, allProperties, pois }: { properties: Property[], allProperties?: Property[], pois?: POI[] }) {
   return (
     <div className="h-full w-full min-h-0 min-w-0 relative">
       <div className="box-border content-stretch flex h-full items-stretch pl-0 pr-0 py-0 relative w-full min-h-0">
-        <Map properties={properties} pois={pois} />
+        <Map properties={properties} allProperties={allProperties} pois={pois} />
       </div>
     </div>
   );
@@ -1176,7 +1181,7 @@ function Content18({ query, pois, filters, isParsing = false, onResetFilters }: 
           dynamicDescription={dynamicDescription}
         />
       </div>
-      <Frame properties={loading || isParsing ? [] : visibleProperties} pois={pois} />
+      <Frame properties={loading || isParsing ? [] : visibleProperties} allProperties={loading || isParsing ? [] : filteredProperties} pois={pois} />
     </div>
   );
 }

@@ -799,6 +799,10 @@
     aspect-ratio: 1.83;
   }
 
+  .aspect-\[1\.57\/1\] {
+    aspect-ratio: 1.57;
+  }
+
   .aspect-\[16\.000696182250977\/19\] {
     aspect-ratio: 16.0007 / 19;
   }
