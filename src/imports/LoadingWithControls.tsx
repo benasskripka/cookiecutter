@@ -355,6 +355,7 @@ interface UnifiedHeaderProps {
   onChatToggle: () => void;
   onLogoClick?: () => void;
   isChatOpen?: boolean;
+  aiActions?: AIAction[];
   filters: FilterState;
   onFilterChange: (filters: FilterState) => void;
 }
@@ -371,13 +372,14 @@ function UnifiedHeader({
   onSearch,
   onAddFilters,
   onAddPOI,
-  onChatToggle,
+  onChatToggle: _onChatToggle,
   onLogoClick,
   isChatOpen: _isChatOpen,
+  aiActions = [],
   filters,
   onFilterChange
 }: UnifiedHeaderProps) {
-  const [activePopup, setActivePopup] = useState<'calendar' | 'people' | 'destination' | 'filters' | null>(null);
+  const [activePopup, setActivePopup] = useState<'calendar' | 'people' | 'destination' | 'filters' | 'history' | null>(null);
   const [calendarHeight, setCalendarHeight] = useState(464);
   // Separate state for the location pill dropdown
   const [locationPillOpen, setLocationPillOpen] = useState(false);
@@ -471,6 +473,10 @@ function UnifiedHeader({
 
   const handleFiltersClick = () => {
     setActivePopup(activePopup === 'filters' ? null : 'filters');
+  };
+
+  const handleHistoryClick = () => {
+    setActivePopup(activePopup === 'history' ? null : 'history');
   };
 
   const activeFilters = getActiveFilters(filters);
@@ -717,9 +723,12 @@ function UnifiedHeader({
           {/* History Icon Button */}
           <button 
             style={{ padding: '12px', backgroundColor: 'white' }}
-            className="relative rounded-full shrink-0 cursor-pointer transition-all duration-200 ease-in-out border border-[rgba(0,0,0,0.15)] flex items-center justify-center hover:bg-[#F7F7F7] hover:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.06)]"
+            className={`
+              relative rounded-full shrink-0 cursor-pointer transition-all duration-200 ease-in-out border border-[rgba(0,0,0,0.15)] flex items-center justify-center
+              ${activePopup === 'history' ? 'shadow-[0px_5px_15px_0px_rgba(0,0,0,0.1)]' : 'hover:bg-[#F7F7F7] hover:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.06)]'}
+            `}
             data-name="search"
-            onClick={onChatToggle}
+            onClick={handleHistoryClick}
           >
             <IconGlyphHistory />
           </button>
@@ -884,8 +893,8 @@ function UnifiedHeader({
           <div 
             className="absolute top-[52px] left-1/2 -translate-x-1/2 w-[850px] z-50 bg-white rounded-[32px] transition-all duration-300 ease-in-out origin-top"
             style={{ 
-              height: activePopup === 'calendar' ? `${calendarHeight}px` : (activePopup === 'filters' ? '600px' : '360px'),
-              width: activePopup === 'filters' ? '780px' : '968px'
+              height: activePopup === 'calendar' ? `${calendarHeight}px` : (activePopup === 'filters' ? '600px' : (activePopup === 'history' ? '400px' : '360px')),
+              width: activePopup === 'filters' ? '780px' : (activePopup === 'history' ? '560px' : '968px')
             }}
           >
             <div aria-hidden="true" className="absolute border border-[rgba(0,0,0,0.15)] border-solid inset-[-1px] pointer-events-none rounded-[33px] shadow-[0px_5px_15px_0px_rgba(0,0,0,0.1)] z-50" />
@@ -914,6 +923,31 @@ function UnifiedHeader({
 
               {activePopup === 'filters' && (
                  <FiltersView filters={filters} onFilterChange={onFilterChange} />
+              )}
+
+              {activePopup === 'history' && (
+                <div className="p-6 h-full overflow-y-auto">
+                  <div className="flex flex-col gap-3">
+                    {aiActions.length === 0 ? (
+                      <div className="flex items-center justify-center h-[200px] text-[#191e3b] opacity-50 text-[14px] font-['CentraNo2',sans-serif]">
+                        No actions or changes yet
+                      </div>
+                    ) : (
+                      aiActions.map(action => (
+                        <div 
+                          key={action.id} 
+                          className="bg-[#f2f8fd] content-stretch flex items-center justify-between overflow-clip px-[24px] py-[16px] relative rounded-[32px] shrink-0 w-full"
+                        >
+                          <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
+                            <div className="flex flex-col font-['CentraNo2',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#191e3b] text-[14px]">
+                              <p className="leading-[1.25]">{action.text}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           </div>
@@ -1474,6 +1508,7 @@ export default function LoadingWithControls({ searchData, onLogoClick }: { searc
         onChatToggle={() => setIsChatOpen(!isChatOpen)}
         onLogoClick={onLogoClick}
         isChatOpen={isChatOpen}
+        aiActions={aiActions}
         filters={filters}
         onFilterChange={setFilters}
       />
